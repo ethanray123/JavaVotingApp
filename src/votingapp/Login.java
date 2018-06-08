@@ -41,7 +41,7 @@ public class Login extends javax.swing.JFrame {
         jPanel1.add(jLabel1);
         jLabel1.setBounds(280, 60, 350, 60);
 
-        username_icon.setIcon(new javax.swing.ImageIcon("C:\\Users\\Hazel Cavite\\Documents\\NetBeansProjects\\VotingApp\\img\\profile.png")); // NOI18N
+        username_icon.setIcon(new javax.swing.ImageIcon("C:\\Users\\Hazel Cavite\\Documents\\NetBeansProjects\\VotingApp\\JavaVotingApp\\img\\profile.png")); // NOI18N
         jPanel1.add(username_icon);
         username_icon.setBounds(290, 220, 30, 50);
 
@@ -59,7 +59,7 @@ public class Login extends javax.swing.JFrame {
         jPanel1.add(username);
         username.setBounds(280, 220, 360, 50);
 
-        password_icon.setIcon(new javax.swing.ImageIcon("C:\\Users\\Hazel Cavite\\Documents\\NetBeansProjects\\VotingApp\\img\\key.png")); // NOI18N
+        password_icon.setIcon(new javax.swing.ImageIcon("C:\\Users\\Hazel Cavite\\Documents\\NetBeansProjects\\VotingApp\\JavaVotingApp\\img\\key.png")); // NOI18N
         jPanel1.add(password_icon);
         password_icon.setBounds(290, 310, 30, 50);
 
@@ -89,9 +89,9 @@ public class Login extends javax.swing.JFrame {
         jPanel1.add(login);
         login.setBounds(280, 390, 360, 50);
 
-        background.setIcon(new javax.swing.ImageIcon("C:\\Users\\Hazel Cavite\\Documents\\NetBeansProjects\\VotingApp\\img\\vote4.png")); // NOI18N
+        background.setIcon(new javax.swing.ImageIcon("C:\\Users\\Hazel Cavite\\Documents\\NetBeansProjects\\VotingApp\\JavaVotingApp\\img\\vote4.png")); // NOI18N
         jPanel1.add(background);
-        background.setBounds(220, 140, 483, 340);
+        background.setBounds(220, 110, 500, 398);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
