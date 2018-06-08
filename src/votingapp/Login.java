@@ -113,7 +113,9 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_usernameActionPerformed
 
     private void loginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginMouseClicked
-        new Home_SuperUser().setVisible(true);
+        //new Home_SuperUser().setVisible(true);
+        // new Home_Officer().setVisible(true);
+        new Home_Voter().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_loginMouseClicked
 
