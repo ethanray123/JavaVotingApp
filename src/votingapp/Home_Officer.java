@@ -62,7 +62,7 @@ public class Home_Officer extends javax.swing.JFrame {
         left_sidebar.setBackground(new java.awt.Color(2, 49, 74));
         left_sidebar.setLayout(null);
 
-        userimg.setIcon(new javax.swing.ImageIcon("C:\\Users\\Hazel Cavite\\Documents\\NetBeansProjects\\Optimal Inventory System\\OptimalInventorySystem-development\\img\\user.png")); // NOI18N
+        userimg.setIcon(new javax.swing.ImageIcon("C:\\Users\\student\\Documents\\NetBeansProjects\\JavaVotingApp\\img\\user.png")); // NOI18N
         left_sidebar.add(userimg);
         userimg.setBounds(73, 56, 100, 110);
 
@@ -103,7 +103,7 @@ public class Home_Officer extends javax.swing.JFrame {
         );
 
         left_sidebar.add(dashboard_side);
-        dashboard_side.setBounds(0, 280, 250, 60);
+        dashboard_side.setBounds(0, 280, 250, 58);
 
         candidates_side.setBackground(new java.awt.Color(2, 49, 74));
         candidates_side.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -135,7 +135,7 @@ public class Home_Officer extends javax.swing.JFrame {
         );
 
         left_sidebar.add(candidates_side);
-        candidates_side.setBounds(0, 340, 250, 60);
+        candidates_side.setBounds(0, 340, 250, 58);
 
         jPanel1.add(left_sidebar);
         left_sidebar.setBounds(0, 0, 250, 620);
