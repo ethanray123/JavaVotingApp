@@ -2,16 +2,27 @@
 package votingapp;
 
 import java.awt.Color;
+import resources.Officer;
+import resources.Superuser;
+import resources.Voter;
 
 public class Login extends javax.swing.JFrame {
-
+    // 2 voters, 1 officer, 1 superuser
     public Login() {
         initComponents();
         username.setBackground(new Color(0, 0, 0, 64));
         password.setBackground(new Color(0, 0, 0, 64));
+        setDummyUser();
+        
     }
-    // 2 voters, 1 officer, 1 superuser
-
+    public void setDummyUser() 
+    {
+        Voter v1 = new Voter("Ethan", "Ethan", "Mosqueda", "JTy");
+        Voter v2 = new Voter("Hazel", "Hazel", "Cavite", "Joshua Ty");
+        Officer o = new Officer("Joshua", "Joshua", "Ty", "Allena Zamoras");
+        Superuser s = new Superuser("Allena", "Allena", "Zamoras", "Zairiel Sarausad");
+    }
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {

@@ -11,8 +11,8 @@ package resources;
  */
 public class Voter extends User{
     
-    public Voter(String fn, String ln, String addedby) {
-        super(fn, ln, addedby);
+    public Voter(String un, String fn, String ln, String addedby) {
+        super(un, fn, ln, addedby);
     }
     
 }

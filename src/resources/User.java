@@ -14,17 +14,19 @@ import java.util.Date;
 public class User {
     private String FirstName;
     private String LastName;
+    private String UserName;
     private int Id;
     private String AddedBy;
     private String UpdatedBy;
     private Date DateAdded;
     private Date DateUpdated;
     
-    public User(String fn, String ln, String addedby){
+    public User(String un, String fn, String ln, String addedby){
        this.FirstName = fn;
        this.LastName = ln;
        this.DateAdded = new Date();
        this.AddedBy= addedby;
+       this.UserName = un;
        //Database.addid;            
     }
     

@@ -11,8 +11,8 @@ package resources;
  */
 public class Superuser extends User{
     
-    public Superuser(String fn, String ln, String addedby) {
-        super(fn, ln, addedby);
+    public Superuser(String un, String fn, String ln, String addedby) {
+        super(un, fn, ln, addedby);
     }
     public void addOfficer(){
         

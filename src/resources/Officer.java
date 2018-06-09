@@ -11,8 +11,8 @@ package resources;
  */
 public class Officer extends User{
     
-    public Officer(String fn, String ln, String addedby) {
-        super(fn, ln, addedby);
+    public Officer(String un, String fn, String ln, String addedby) {
+        super(un, fn, ln, addedby);
     }
     
 }
