@@ -81,7 +81,7 @@ public class Home_SuperUser extends javax.swing.JFrame {
         left_sidebar.setBackground(new java.awt.Color(2, 49, 74));
         left_sidebar.setLayout(null);
 
-        userimg.setIcon(new javax.swing.ImageIcon("C:\\Users\\Hazel Cavite\\Documents\\NetBeansProjects\\Optimal Inventory System\\OptimalInventorySystem-development\\img\\user.png")); // NOI18N
+        userimg.setIcon(new javax.swing.ImageIcon("C:\\Users\\student.CEACCS\\Documents\\Hazel\\JavaVotingApp\\img\\user.png")); // NOI18N
         left_sidebar.add(userimg);
         userimg.setBounds(73, 56, 100, 110);
 
@@ -122,7 +122,7 @@ public class Home_SuperUser extends javax.swing.JFrame {
         );
 
         left_sidebar.add(dashboard_side);
-        dashboard_side.setBounds(0, 280, 250, 60);
+        dashboard_side.setBounds(0, 280, 250, 58);
 
         officers_side.setBackground(new java.awt.Color(2, 49, 74));
         officers_side.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -154,7 +154,7 @@ public class Home_SuperUser extends javax.swing.JFrame {
         );
 
         left_sidebar.add(officers_side);
-        officers_side.setBounds(0, 340, 250, 60);
+        officers_side.setBounds(0, 340, 250, 58);
 
         voters_side.setBackground(new java.awt.Color(2, 49, 74));
         voters_side.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -186,7 +186,7 @@ public class Home_SuperUser extends javax.swing.JFrame {
         );
 
         left_sidebar.add(voters_side);
-        voters_side.setBounds(0, 400, 250, 60);
+        voters_side.setBounds(0, 400, 250, 58);
 
         jPanel1.add(left_sidebar);
         left_sidebar.setBounds(0, 0, 250, 600);

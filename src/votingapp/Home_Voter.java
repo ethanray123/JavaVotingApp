@@ -61,7 +61,7 @@ public class Home_Voter extends javax.swing.JFrame {
         left_sidebar.setBackground(new java.awt.Color(2, 49, 74));
         left_sidebar.setLayout(null);
 
-        userimg.setIcon(new javax.swing.ImageIcon("C:\\Users\\Hazel Cavite\\Documents\\NetBeansProjects\\Optimal Inventory System\\OptimalInventorySystem-development\\img\\user.png")); // NOI18N
+        userimg.setIcon(new javax.swing.ImageIcon("C:\\Users\\student.CEACCS\\Documents\\Hazel\\JavaVotingApp\\img\\user.png")); // NOI18N
         left_sidebar.add(userimg);
         userimg.setBounds(73, 56, 100, 110);
 
@@ -102,7 +102,7 @@ public class Home_Voter extends javax.swing.JFrame {
         );
 
         left_sidebar.add(dashboard_side);
-        dashboard_side.setBounds(0, 280, 250, 60);
+        dashboard_side.setBounds(0, 280, 250, 58);
 
         candidates_side.setBackground(new java.awt.Color(2, 49, 74));
         candidates_side.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -134,7 +134,7 @@ public class Home_Voter extends javax.swing.JFrame {
         );
 
         left_sidebar.add(candidates_side);
-        candidates_side.setBounds(0, 340, 250, 60);
+        candidates_side.setBounds(0, 340, 250, 58);
 
         jPanel1.add(left_sidebar);
         left_sidebar.setBounds(0, 0, 250, 620);
@@ -226,34 +226,8 @@ public class Home_Voter extends javax.swing.JFrame {
         candidates_sideBar_onclick();
     }//GEN-LAST:event_candidates_sideMouseClicked
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Home_Voter.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Home_Voter.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Home_Voter.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Home_Voter.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
+        
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Home_Voter().setVisible(true);
