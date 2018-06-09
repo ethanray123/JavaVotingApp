@@ -38,8 +38,7 @@ public class Login extends javax.swing.JFrame {
         jLabel1.setText("Automated Voting System");
         jPanel1.add(jLabel1);
         jLabel1.setBounds(280, 60, 350, 60);
-
-        username_icon.setIcon(new javax.swing.ImageIcon("C:\\Users\\student.CEACCS\\Documents\\Hazel\\JavaVotingApp\\img\\profile.png")); // NOI18N
+        username_icon.setIcon(new javax.swing.ImageIcon("C:\\Users\\student.CEACCS\\Documents\\Hazel\\JavaVotingApp\\img\\profile.png"));
         jPanel1.add(username_icon);
         username_icon.setBounds(290, 220, 30, 50);
 
@@ -56,8 +55,7 @@ public class Login extends javax.swing.JFrame {
         });
         jPanel1.add(username);
         username.setBounds(280, 220, 360, 50);
-
-        password_icon.setIcon(new javax.swing.ImageIcon("C:\\Users\\student.CEACCS\\Documents\\Hazel\\JavaVotingApp\\img\\key.png")); // NOI18N
+        password_icon.setIcon(new javax.swing.ImageIcon("C:\\Users\\student.CEACCS\\Documents\\Hazel\\JavaVotingApp\\img\\key.png"));
         jPanel1.add(password_icon);
         password_icon.setBounds(290, 310, 30, 50);
 
@@ -86,7 +84,6 @@ public class Login extends javax.swing.JFrame {
         });
         jPanel1.add(login);
         login.setBounds(280, 390, 360, 50);
-
         background.setIcon(new javax.swing.ImageIcon("C:\\Users\\student.CEACCS\\Documents\\Hazel\\JavaVotingApp\\img\\vote4.png")); // NOI18N
         jPanel1.add(background);
         background.setBounds(220, 130, 500, 398);

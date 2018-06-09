@@ -60,8 +60,7 @@ public class Home_Voter extends javax.swing.JFrame {
 
         left_sidebar.setBackground(new java.awt.Color(2, 49, 74));
         left_sidebar.setLayout(null);
-
-        userimg.setIcon(new javax.swing.ImageIcon("C:\\Users\\student.CEACCS\\Documents\\Hazel\\JavaVotingApp\\img\\user.png")); // NOI18N
+        userimg.setIcon(new javax.swing.ImageIcon("C:\\Users\\student.CEACCS\\Documents\\Hazel\\JavaVotingApp\\img\\user.png"));
         left_sidebar.add(userimg);
         userimg.setBounds(73, 56, 100, 110);
 
