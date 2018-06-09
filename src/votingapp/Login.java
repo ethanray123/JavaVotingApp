@@ -2,17 +2,22 @@
 package votingapp;
 
 import java.awt.Color;
+import java.util.ArrayList;
 import resources.Officer;
 import resources.Superuser;
 import resources.Voter;
 
 public class Login extends javax.swing.JFrame {
     // 2 voters, 1 officer, 1 superuser
+    public static ArrayList<String> passwordList = new ArrayList<>();
+    public static ArrayList<String> usernameList = new ArrayList<>();
     public Login() {
         initComponents();
         username.setBackground(new Color(0, 0, 0, 64));
         password.setBackground(new Color(0, 0, 0, 64));
         setDummyUser();
+        setUsernameList();
+        setPasswordList();
         
     }
     public void setDummyUser() 
@@ -23,12 +28,60 @@ public class Login extends javax.swing.JFrame {
         Superuser s = new Superuser("Allena", "Allena", "Zamoras", "Zairiel Sarausad");
     }
     
+    public void setUsernameList()
+    {
+        Login.usernameList.add("Ethan");
+        Login.usernameList.add("Hazel");
+        Login.usernameList.add("Joshua");
+        Login.usernameList.add("Allena");
+    }
+    
+    public void setPasswordList()
+    {
+        Login.passwordList.add("Ethan");
+        Login.passwordList.add("Hazel");
+        Login.passwordList.add("Joshua");
+        Login.passwordList.add("Allena");
+    }
+    
+    public void checkCredentials()
+    {
+        String inputUsername = username.getText();
+        String inputPassword = password.getText();
+        if(usernameList.contains(inputUsername)){
+            if(passwordList.contains(inputPassword) && inputUsername.equals(inputPassword)){
+                switch(inputUsername){
+                    case "Ethan":
+                        new Home_Voter().setVisible(true);
+                        this.dispose();
+                        break;
+                    case "Hazel":
+                        new Home_Voter().setVisible(true);
+                        this.dispose();
+                        break;
+                    case "Joshua":
+                        new Home_Officer().setVisible(true);
+                        this.dispose();
+                        break;
+                    case "Allena":
+                        new Home_SuperUser().setVisible(true);
+                        this.dispose();
+                        break;
+                }
+            }else{
+                statuslabel.setText("Password is incorrect");
+            }
+        }else{
+            statuslabel.setText("Username doesn't exist");
+        }
+    }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        statuslabel = new javax.swing.JLabel();
         username_icon = new javax.swing.JLabel();
         username = new javax.swing.JTextField();
         password_icon = new javax.swing.JLabel();
@@ -49,7 +102,14 @@ public class Login extends javax.swing.JFrame {
         jLabel1.setText("Automated Voting System");
         jPanel1.add(jLabel1);
         jLabel1.setBounds(280, 60, 350, 60);
-        username_icon.setIcon(new javax.swing.ImageIcon("C:\\Users\\student.CEACCS\\Documents\\Hazel\\JavaVotingApp\\img\\profile.png"));
+
+        statuslabel.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        statuslabel.setForeground(new java.awt.Color(255, 51, 51));
+        statuslabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jPanel1.add(statuslabel);
+        statuslabel.setBounds(280, 440, 360, 40);
+
+        username_icon.setIcon(new javax.swing.ImageIcon("C:\\Users\\student.CEACCS\\Documents\\Hazel\\JavaVotingApp\\img\\profile.png")); // NOI18N
         jPanel1.add(username_icon);
         username_icon.setBounds(290, 220, 30, 50);
 
@@ -66,7 +126,8 @@ public class Login extends javax.swing.JFrame {
         });
         jPanel1.add(username);
         username.setBounds(280, 220, 360, 50);
-        password_icon.setIcon(new javax.swing.ImageIcon("C:\\Users\\student.CEACCS\\Documents\\Hazel\\JavaVotingApp\\img\\key.png"));
+
+        password_icon.setIcon(new javax.swing.ImageIcon("C:\\Users\\student.CEACCS\\Documents\\Hazel\\JavaVotingApp\\img\\key.png")); // NOI18N
         jPanel1.add(password_icon);
         password_icon.setBounds(290, 310, 30, 50);
 
@@ -95,6 +156,7 @@ public class Login extends javax.swing.JFrame {
         });
         jPanel1.add(login);
         login.setBounds(280, 390, 360, 50);
+
         background.setIcon(new javax.swing.ImageIcon("C:\\Users\\student.CEACCS\\Documents\\Hazel\\JavaVotingApp\\img\\vote4.png")); // NOI18N
         jPanel1.add(background);
         background.setBounds(220, 130, 500, 398);
@@ -119,10 +181,7 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_usernameActionPerformed
 
     private void loginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginMouseClicked
-        //new Home_SuperUser().setVisible(true);
-        // new Home_Officer().setVisible(true);
-        new Home_Voter().setVisible(true);
-        this.dispose();
+        checkCredentials();
     }//GEN-LAST:event_loginMouseClicked
 
     private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
@@ -145,6 +204,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JButton login;
     private javax.swing.JPasswordField password;
     private javax.swing.JLabel password_icon;
+    private javax.swing.JLabel statuslabel;
     private javax.swing.JTextField username;
     private javax.swing.JLabel username_icon;
     // End of variables declaration//GEN-END:variables

@@ -60,14 +60,15 @@ public class Home_Voter extends javax.swing.JFrame {
 
         left_sidebar.setBackground(new java.awt.Color(2, 49, 74));
         left_sidebar.setLayout(null);
-        userimg.setIcon(new javax.swing.ImageIcon("C:\\Users\\student.CEACCS\\Documents\\Hazel\\JavaVotingApp\\img\\user.png"));
+
+        userimg.setIcon(new javax.swing.ImageIcon("C:\\Users\\student.CEACCS\\Documents\\Hazel\\JavaVotingApp\\img\\user.png")); // NOI18N
         left_sidebar.add(userimg);
         userimg.setBounds(73, 56, 100, 110);
 
         user_label.setFont(new java.awt.Font("Yu Gothic UI", 1, 24)); // NOI18N
         user_label.setForeground(new java.awt.Color(255, 255, 255));
         user_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        user_label.setText("OFFICER");
+        user_label.setText("Voter");
         left_sidebar.add(user_label);
         user_label.setBounds(10, 180, 230, 40);
 
