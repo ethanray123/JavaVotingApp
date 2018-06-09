@@ -1,25 +1,16 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package resources;
 
 import java.util.Date;
 
-/**
- *
- * @author student
- */
 public class User {
     private String FirstName;
     private String LastName;
-    private String UserName;
     private int Id;
     private String AddedBy;
     private String UpdatedBy;
     private Date DateAdded;
     private Date DateUpdated;
+    private String UserName;
     
     public User(String un, String fn, String ln, String addedby){
        this.FirstName = fn;
@@ -27,10 +18,12 @@ public class User {
        this.DateAdded = new Date();
        this.AddedBy= addedby;
        this.UserName = un;
-       //Database.addid;            
+       Database.assignId();            
     }
     
-    
+    public int getId(){
+        return this.Id;
+    }
     public void setFirstname(String fn){
         this.FirstName = fn;  
     }
