@@ -103,8 +103,13 @@ public class Database {
         votes.add(v);
     }
     
-    public static void updateCandidate(String id, String name, String position){
-        
+    public static void updateCandidate(int id, String name, String position, String officer){
+        candidates.get(id).setCandidateName(name, officer);
+        candidates.get(id).setPosition(position, officer);
+    }
+    
+    public static boolean checkIfVoted(){
+        return (votes.isEmpty());
     }
     
     public static boolean removeFromActiveUsersWhereIdIs(int id){
@@ -121,6 +126,20 @@ public class Database {
             return true;
         }else{
             return false;
+        }
+    }
+    
+    public static Candidate getFromCandidatesWhereNameIs(String name){
+        int i=0;
+        for(; i < candidates.size(); i++){
+            if(candidates.get(i).getCandidateName().equals(name)){
+                break;
+            }
+        }
+        if(i != candidates.size()){
+            return candidates.get(i);
+        }else{
+            return null;
         }
     }
     
