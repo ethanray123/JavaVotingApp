@@ -136,7 +136,9 @@ public class Database {
             return false;
         }
     }
-    
+    public static ArrayList getCandidateList(){
+        return activeCandidates;
+    }
     public static Candidate getFromCandidatesWhereNameIs(String name){
         int i=0;
         for(; i < activeCandidates.size(); i++){

@@ -17,13 +17,16 @@ public class Candidate {
     private Date updatedOn;
     private int id;
     
-    Candidate(int id, String name, String pos, String user){
+   
+    public Candidate(int id, String name, String pos, String user){
         candidateName = name;
         position = pos;
         votes=0;
         addedOn = new Date();
         addedBy = user;
     }
+   
+   
     
     public String getCandidateName(){
         return this.candidateName;
