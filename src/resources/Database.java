@@ -46,6 +46,8 @@ public class Database {
     private static int id = 0;
     private static ArrayList<User> active = new ArrayList<User>();
     private static ArrayList<User> archive = new ArrayList<User>();
+    private static ArrayList<Vote> votes = new ArrayList<Vote>();
+    private static ArrayList<Candidate> candidates = new ArrayList<Candidate>();
     
     public static boolean isInActiveWhereIdIs(int id){
         int i=0;
@@ -90,6 +92,19 @@ public class Database {
     public static void addToArchivedUsers(User User){
         archive.add(User);
         Collections.sort(archive, new SortById());
+    }
+    
+    public static void addToCandidates(String name, String position){
+        Candidate newCand = new Candidate(name,position);
+        candidates.add(newCand);
+    }
+    
+    public static void addToVotes(Vote v){
+        votes.add(v);
+    }
+    
+    public static void updateCandidate(String id, String name, String position){
+        
     }
     
     public static boolean removeFromActiveUsersWhereIdIs(int id){
