@@ -96,25 +96,25 @@ public class Login extends javax.swing.JFrame {
         jPanel1.setMinimumSize(new java.awt.Dimension(940, 618));
         jPanel1.setLayout(null);
 
-        jLabel1.setFont(new java.awt.Font("Yu Gothic UI", 1, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Raleway", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Automated Voting System");
         jPanel1.add(jLabel1);
         jLabel1.setBounds(280, 60, 350, 60);
 
-        statuslabel.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        statuslabel.setFont(new java.awt.Font("Raleway", 0, 18)); // NOI18N
         statuslabel.setForeground(new java.awt.Color(255, 51, 51));
         statuslabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jPanel1.add(statuslabel);
         statuslabel.setBounds(280, 440, 360, 40);
 
-        username_icon.setIcon(new javax.swing.ImageIcon("C:\\Users\\student.CEACCS\\Documents\\Hazel\\JavaVotingApp\\img\\profile.png")); // NOI18N
+        username_icon.setIcon(new javax.swing.ImageIcon("C:\\Users\\Hazel Cavite\\Documents\\NetBeansProjects\\VotingApp\\JavaVotingApp\\img\\profile.png")); // NOI18N
         jPanel1.add(username_icon);
         username_icon.setBounds(290, 220, 30, 50);
 
         username.setBackground(new java.awt.Color(238, 238, 238));
-        username.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        username.setFont(new java.awt.Font("Raleway", 0, 18)); // NOI18N
         username.setForeground(new java.awt.Color(255, 255, 255));
         username.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         username.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(67, 101, 102), 2, true));
@@ -127,11 +127,11 @@ public class Login extends javax.swing.JFrame {
         jPanel1.add(username);
         username.setBounds(280, 220, 360, 50);
 
-        password_icon.setIcon(new javax.swing.ImageIcon("C:\\Users\\student.CEACCS\\Documents\\Hazel\\JavaVotingApp\\img\\key.png")); // NOI18N
+        password_icon.setIcon(new javax.swing.ImageIcon("C:\\Users\\Hazel Cavite\\Documents\\NetBeansProjects\\VotingApp\\JavaVotingApp\\img\\key.png")); // NOI18N
         jPanel1.add(password_icon);
         password_icon.setBounds(290, 310, 30, 50);
 
-        password.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        password.setFont(new java.awt.Font("Raleway", 0, 18)); // NOI18N
         password.setForeground(new java.awt.Color(255, 255, 255));
         password.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         password.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(67, 101, 102), 2, true));
@@ -140,7 +140,7 @@ public class Login extends javax.swing.JFrame {
         password.setBounds(280, 310, 360, 50);
 
         login.setBackground(new java.awt.Color(155, 75, 77));
-        login.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        login.setFont(new java.awt.Font("Raleway", 0, 18)); // NOI18N
         login.setForeground(new java.awt.Color(255, 255, 255));
         login.setText("LOGIN");
         login.setBorder(null);
@@ -157,9 +157,9 @@ public class Login extends javax.swing.JFrame {
         jPanel1.add(login);
         login.setBounds(280, 390, 360, 50);
 
-        background.setIcon(new javax.swing.ImageIcon("C:\\Users\\student.CEACCS\\Documents\\Hazel\\JavaVotingApp\\img\\vote4.png")); // NOI18N
+        background.setIcon(new javax.swing.ImageIcon("C:\\Users\\Hazel Cavite\\Documents\\NetBeansProjects\\VotingApp\\JavaVotingApp\\img\\vote4.png")); // NOI18N
         jPanel1.add(background);
-        background.setBounds(220, 130, 500, 398);
+        background.setBounds(220, 130, 500, 380);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -180,13 +180,13 @@ public class Login extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_usernameActionPerformed
 
+    private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
+
+    }//GEN-LAST:event_loginActionPerformed
+
     private void loginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginMouseClicked
         checkCredentials();
     }//GEN-LAST:event_loginMouseClicked
-
-    private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
-    
-    }//GEN-LAST:event_loginActionPerformed
 
     public static void main(String args[]) {
       

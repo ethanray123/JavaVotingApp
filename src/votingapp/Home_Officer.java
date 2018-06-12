@@ -47,10 +47,15 @@ public class Home_Officer extends javax.swing.JFrame {
         dashboard_side_label = new javax.swing.JLabel();
         candidates_side = new javax.swing.JPanel();
         candidates_side_label = new javax.swing.JLabel();
+        candidates = new javax.swing.JPanel();
+        searchbar_panel = new javax.swing.JPanel();
+        search_icon = new javax.swing.JLabel();
+        searchbar_dashboard = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        candidatesTable = new javax.swing.JTable();
+        add = new javax.swing.JButton();
         dashboard = new javax.swing.JPanel();
         dashboard_right_label = new javax.swing.JLabel();
-        candidates = new javax.swing.JPanel();
-        candidates_right_label = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -61,9 +66,12 @@ public class Home_Officer extends javax.swing.JFrame {
 
         left_sidebar.setBackground(new java.awt.Color(2, 49, 74));
         left_sidebar.setLayout(null);
-        userimg.setIcon(new javax.swing.ImageIcon("C:\\Users\\student.CEACCS\\Documents\\Hazel\\JavaVotingApp\\img\\user.png"));
 
-        user_label.setFont(new java.awt.Font("Yu Gothic UI", 1, 24)); // NOI18N
+        userimg.setIcon(new javax.swing.ImageIcon("C:\\Users\\Hazel Cavite\\Documents\\NetBeansProjects\\VotingApp\\JavaVotingApp\\img\\user.png")); // NOI18N
+        left_sidebar.add(userimg);
+        userimg.setBounds(73, 56, 100, 110);
+
+        user_label.setFont(new java.awt.Font("Raleway", 0, 18)); // NOI18N
         user_label.setForeground(new java.awt.Color(255, 255, 255));
         user_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         user_label.setText("OFFICER");
@@ -77,7 +85,7 @@ public class Home_Officer extends javax.swing.JFrame {
             }
         });
 
-        dashboard_side_label.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        dashboard_side_label.setFont(new java.awt.Font("Raleway", 0, 14)); // NOI18N
         dashboard_side_label.setForeground(new java.awt.Color(255, 255, 255));
         dashboard_side_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         dashboard_side_label.setText("DASHBOARD");
@@ -100,7 +108,7 @@ public class Home_Officer extends javax.swing.JFrame {
         );
 
         left_sidebar.add(dashboard_side);
-        dashboard_side.setBounds(0, 280, 250, 58);
+        dashboard_side.setBounds(0, 280, 250, 60);
 
         candidates_side.setBackground(new java.awt.Color(2, 49, 74));
         candidates_side.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -109,7 +117,7 @@ public class Home_Officer extends javax.swing.JFrame {
             }
         });
 
-        candidates_side_label.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        candidates_side_label.setFont(new java.awt.Font("Raleway", 0, 14)); // NOI18N
         candidates_side_label.setForeground(new java.awt.Color(255, 255, 255));
         candidates_side_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         candidates_side_label.setText("LIST OF CANDIDATES");
@@ -132,10 +140,88 @@ public class Home_Officer extends javax.swing.JFrame {
         );
 
         left_sidebar.add(candidates_side);
-        candidates_side.setBounds(0, 340, 250, 58);
+        candidates_side.setBounds(0, 340, 250, 60);
 
         jPanel1.add(left_sidebar);
         left_sidebar.setBounds(0, 0, 250, 620);
+
+        candidates.setBackground(new java.awt.Color(0, 17, 36));
+        candidates.setCursor(new java.awt.Cursor(java.awt.Cursor.NE_RESIZE_CURSOR));
+
+        searchbar_panel.setBackground(new java.awt.Color(0, 17, 36));
+        searchbar_panel.setMaximumSize(new java.awt.Dimension(940, 618));
+        searchbar_panel.setMinimumSize(new java.awt.Dimension(940, 618));
+        searchbar_panel.setLayout(null);
+
+        search_icon.setIcon(new javax.swing.ImageIcon("C:\\Users\\Hazel Cavite\\Documents\\NetBeansProjects\\Optimal Inventory System\\OptimalInventorySystem-development\\img\\growth.png")); // NOI18N
+        searchbar_panel.add(search_icon);
+        search_icon.setBounds(440, 20, 30, 40);
+
+        searchbar_dashboard.setBackground(new java.awt.Color(15, 74, 74));
+        searchbar_dashboard.setFont(new java.awt.Font("Raleway", 1, 14)); // NOI18N
+        searchbar_dashboard.setForeground(new java.awt.Color(255, 255, 255));
+        searchbar_dashboard.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        searchbar_dashboard.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 2, true));
+        searchbar_dashboard.setOpaque(false);
+        searchbar_dashboard.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchbar_dashboardActionPerformed(evt);
+            }
+        });
+        searchbar_panel.add(searchbar_dashboard);
+        searchbar_dashboard.setBounds(430, 20, 230, 40);
+
+        candidatesTable.setFont(new java.awt.Font("Raleway", 0, 12)); // NOI18N
+        candidatesTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Name", "Position", "No. of Votes"
+            }
+        ));
+        jScrollPane1.setViewportView(candidatesTable);
+
+        searchbar_panel.add(jScrollPane1);
+        jScrollPane1.setBounds(30, 160, 630, 250);
+
+        add.setBackground(new java.awt.Color(0, 153, 51));
+        add.setFont(new java.awt.Font("Raleway", 0, 14)); // NOI18N
+        add.setForeground(new java.awt.Color(255, 255, 255));
+        add.setText("ADD");
+        add.setBorder(null);
+        add.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                addMouseClicked(evt);
+            }
+        });
+        add.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addActionPerformed(evt);
+            }
+        });
+        searchbar_panel.add(add);
+        add.setBounds(580, 100, 80, 40);
+
+        javax.swing.GroupLayout candidatesLayout = new javax.swing.GroupLayout(candidates);
+        candidates.setLayout(candidatesLayout);
+        candidatesLayout.setHorizontalGroup(
+            candidatesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(candidatesLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(searchbar_panel, javax.swing.GroupLayout.PREFERRED_SIZE, 690, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        candidatesLayout.setVerticalGroup(
+            candidatesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(candidatesLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(searchbar_panel, javax.swing.GroupLayout.PREFERRED_SIZE, 618, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(candidates);
+        candidates.setBounds(250, 0, 690, 620);
 
         dashboard.setBackground(new java.awt.Color(0, 17, 36));
         dashboard.setCursor(new java.awt.Cursor(java.awt.Cursor.NE_RESIZE_CURSOR));
@@ -169,38 +255,6 @@ public class Home_Officer extends javax.swing.JFrame {
         jPanel1.add(dashboard);
         dashboard.setBounds(250, 0, 690, 620);
 
-        candidates.setBackground(new java.awt.Color(0, 17, 36));
-        candidates.setCursor(new java.awt.Cursor(java.awt.Cursor.NE_RESIZE_CURSOR));
-
-        candidates_right_label.setFont(new java.awt.Font("Yu Gothic UI", 1, 24)); // NOI18N
-        candidates_right_label.setForeground(new java.awt.Color(255, 255, 255));
-        candidates_right_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        candidates_right_label.setText("this is candidates");
-
-        javax.swing.GroupLayout candidatesLayout = new javax.swing.GroupLayout(candidates);
-        candidates.setLayout(candidatesLayout);
-        candidatesLayout.setHorizontalGroup(
-            candidatesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 690, Short.MAX_VALUE)
-            .addGroup(candidatesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(candidatesLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(candidates_right_label, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-        candidatesLayout.setVerticalGroup(
-            candidatesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 620, Short.MAX_VALUE)
-            .addGroup(candidatesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(candidatesLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(candidates_right_label, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-
-        jPanel1.add(candidates);
-        candidates.setBounds(250, 0, 690, 620);
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -224,6 +278,18 @@ public class Home_Officer extends javax.swing.JFrame {
         candidates_sideBar_onclick();
     }//GEN-LAST:event_candidates_sideMouseClicked
 
+    private void searchbar_dashboardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchbar_dashboardActionPerformed
+
+    }//GEN-LAST:event_searchbar_dashboardActionPerformed
+
+    private void addMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addMouseClicked
+        
+    }//GEN-LAST:event_addMouseClicked
+
+    private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
+
+    }//GEN-LAST:event_addActionPerformed
+
     public static void main(String args[]) {
        
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -234,8 +300,9 @@ public class Home_Officer extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton add;
     private javax.swing.JPanel candidates;
-    private javax.swing.JLabel candidates_right_label;
+    private javax.swing.JTable candidatesTable;
     private javax.swing.JPanel candidates_side;
     private javax.swing.JLabel candidates_side_label;
     private javax.swing.JPanel dashboard;
@@ -243,7 +310,11 @@ public class Home_Officer extends javax.swing.JFrame {
     private javax.swing.JPanel dashboard_side;
     private javax.swing.JLabel dashboard_side_label;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPanel left_sidebar;
+    private javax.swing.JLabel search_icon;
+    private javax.swing.JTextField searchbar_dashboard;
+    private javax.swing.JPanel searchbar_panel;
     private javax.swing.JLabel user_label;
     private javax.swing.JLabel userimg;
     // End of variables declaration//GEN-END:variables

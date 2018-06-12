@@ -80,9 +80,12 @@ public class Home_SuperUser extends javax.swing.JFrame {
 
         left_sidebar.setBackground(new java.awt.Color(2, 49, 74));
         left_sidebar.setLayout(null);
-        userimg.setIcon(new javax.swing.ImageIcon("C:\\Users\\student.CEACCS\\Documents\\Hazel\\JavaVotingApp\\img\\user.png"));
 
-        user_label.setFont(new java.awt.Font("Yu Gothic UI", 1, 24)); // NOI18N
+        userimg.setIcon(new javax.swing.ImageIcon("C:\\Users\\Hazel Cavite\\Documents\\NetBeansProjects\\VotingApp\\JavaVotingApp\\img\\user.png")); // NOI18N
+        left_sidebar.add(userimg);
+        userimg.setBounds(73, 56, 100, 110);
+
+        user_label.setFont(new java.awt.Font("Raleway", 0, 18)); // NOI18N
         user_label.setForeground(new java.awt.Color(255, 255, 255));
         user_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         user_label.setText("SUPERUSER");
@@ -96,7 +99,7 @@ public class Home_SuperUser extends javax.swing.JFrame {
             }
         });
 
-        dashboard_side_label.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        dashboard_side_label.setFont(new java.awt.Font("Raleway", 0, 14)); // NOI18N
         dashboard_side_label.setForeground(new java.awt.Color(255, 255, 255));
         dashboard_side_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         dashboard_side_label.setText("DASHBOARD");
@@ -119,7 +122,7 @@ public class Home_SuperUser extends javax.swing.JFrame {
         );
 
         left_sidebar.add(dashboard_side);
-        dashboard_side.setBounds(0, 280, 250, 58);
+        dashboard_side.setBounds(0, 280, 250, 60);
 
         officers_side.setBackground(new java.awt.Color(2, 49, 74));
         officers_side.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -128,7 +131,7 @@ public class Home_SuperUser extends javax.swing.JFrame {
             }
         });
 
-        officers_side_label.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        officers_side_label.setFont(new java.awt.Font("Raleway", 0, 14)); // NOI18N
         officers_side_label.setForeground(new java.awt.Color(255, 255, 255));
         officers_side_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         officers_side_label.setText("LIST OF OFFICERS");
@@ -151,7 +154,7 @@ public class Home_SuperUser extends javax.swing.JFrame {
         );
 
         left_sidebar.add(officers_side);
-        officers_side.setBounds(0, 340, 250, 58);
+        officers_side.setBounds(0, 340, 250, 60);
 
         voters_side.setBackground(new java.awt.Color(2, 49, 74));
         voters_side.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -160,7 +163,7 @@ public class Home_SuperUser extends javax.swing.JFrame {
             }
         });
 
-        voters_side_label.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        voters_side_label.setFont(new java.awt.Font("Raleway", 0, 14)); // NOI18N
         voters_side_label.setForeground(new java.awt.Color(255, 255, 255));
         voters_side_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         voters_side_label.setText("LIST OF VOTERS");
@@ -183,7 +186,7 @@ public class Home_SuperUser extends javax.swing.JFrame {
         );
 
         left_sidebar.add(voters_side);
-        voters_side.setBounds(0, 400, 250, 58);
+        voters_side.setBounds(0, 400, 250, 60);
 
         jPanel1.add(left_sidebar);
         left_sidebar.setBounds(0, 0, 250, 600);
@@ -191,7 +194,7 @@ public class Home_SuperUser extends javax.swing.JFrame {
         dashboard.setBackground(new java.awt.Color(0, 17, 36));
         dashboard.setCursor(new java.awt.Cursor(java.awt.Cursor.NE_RESIZE_CURSOR));
 
-        dashboard_right_label.setFont(new java.awt.Font("Yu Gothic UI", 1, 24)); // NOI18N
+        dashboard_right_label.setFont(new java.awt.Font("Raleway", 0, 24)); // NOI18N
         dashboard_right_label.setForeground(new java.awt.Color(255, 255, 255));
         dashboard_right_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         dashboard_right_label.setText("this is dashboard");
@@ -223,7 +226,7 @@ public class Home_SuperUser extends javax.swing.JFrame {
         officers.setBackground(new java.awt.Color(0, 17, 36));
         officers.setCursor(new java.awt.Cursor(java.awt.Cursor.NE_RESIZE_CURSOR));
 
-        dashboard_right_label1.setFont(new java.awt.Font("Yu Gothic UI", 1, 24)); // NOI18N
+        dashboard_right_label1.setFont(new java.awt.Font("Raleway", 0, 24)); // NOI18N
         dashboard_right_label1.setForeground(new java.awt.Color(255, 255, 255));
         dashboard_right_label1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         dashboard_right_label1.setText("this is officers");
@@ -255,7 +258,7 @@ public class Home_SuperUser extends javax.swing.JFrame {
         voters.setBackground(new java.awt.Color(0, 17, 36));
         voters.setCursor(new java.awt.Cursor(java.awt.Cursor.NE_RESIZE_CURSOR));
 
-        dashboard_right_label2.setFont(new java.awt.Font("Yu Gothic UI", 1, 24)); // NOI18N
+        dashboard_right_label2.setFont(new java.awt.Font("Raleway", 0, 24)); // NOI18N
         dashboard_right_label2.setForeground(new java.awt.Color(255, 255, 255));
         dashboard_right_label2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         dashboard_right_label2.setText("this is voters");
