@@ -36,6 +36,12 @@ public class User {
     public String getLastname(){
         return this.LastName;
     }
+    public void setUsername(String un){
+        this.UserName = un;
+    }
+    public String getUsername(){
+        return this.UserName;
+    }
     public void setAddedby(String ab){
          this.AddedBy = ab;   
     }

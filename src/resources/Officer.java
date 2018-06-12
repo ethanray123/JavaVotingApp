@@ -5,6 +5,8 @@
  */
 package resources;
 
+import static resources.Database.addToCandidates;
+
 /**
  *
  * @author student
@@ -15,4 +17,11 @@ public class Officer extends User{
         super(un, fn, ln, addedby);
     }
     
+    public void addCandidate(String name, String position){
+        addToCandidates(name,position,this.getUsername());
+    }
+    
+    public void removeCandidate(int id){
+//        removeFromCandidates(id);
+    }
 }

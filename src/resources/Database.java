@@ -43,36 +43,38 @@ class SortById implements Comparator<User>
 //}
 
 public class Database {
-    private static int id = 0;
-    private static ArrayList<User> active = new ArrayList<User>();
-    private static ArrayList<User> archive = new ArrayList<User>();
+    private static int userid = 0;
+    private static int candidateid = 0;
+    private static ArrayList<User> activeUsers = new ArrayList<User>();
+    private static ArrayList<User> archivedUsers = new ArrayList<User>();
     private static ArrayList<Vote> votes = new ArrayList<Vote>();
-    private static ArrayList<Candidate> candidates = new ArrayList<Candidate>();
+    private static ArrayList<Candidate> activeCandidates = new ArrayList<Candidate>();
+    private static ArrayList<Candidate> archivedCandidates = new ArrayList<Candidate>();
     
-    public static boolean isInActiveWhereIdIs(int id){
+    public static boolean isInActiveUsersWhereIdIs(int id){
         int i=0;
-        for(; i < active.size(); i++){
-            if(active.get(i).getId() == id){
+        for(; i < activeUsers.size(); i++){
+            if(activeUsers.get(i).getId() == id){
                 break;
             }
         }
-        if(i != active.size()){
+        if(i != activeUsers.size()){
             return true;
         }else{
             return false;
         }
     }
     
-    public static boolean isInActive(User User){
-        if(active.contains(User)){
+    public static boolean isInActiveUsers(User user){
+        if(activeUsers.contains(user)){
             return true;
         }else{
             return false;    
         }
     }
     
-    public static boolean isInArchive(User User){
-        if(archive.contains(User)){
+    public static boolean isInArchivedUsers(User user){
+        if(archivedUsers.contains(user)){
             return true;
         }else{
             return false;    
@@ -80,23 +82,27 @@ public class Database {
     }
     
     public static int assignId(){
-        return id++;
+        return userid++;
     }
     
     public static void addToActiveUsers(User User){
-        
-        active.add(User);
-        Collections.sort(active, new SortById());
+        activeUsers.add(User);
+        Collections.sort(activeUsers, new SortById());
     }
     
     public static void addToArchivedUsers(User User){
-        archive.add(User);
-        Collections.sort(archive, new SortById());
+        archivedUsers.add(User);
+        Collections.sort(archivedUsers, new SortById());
     }
     
-    public static void addToCandidates(String name, String position){
-        Candidate newCand = new Candidate(name,position);
-        candidates.add(newCand);
+    public static void addToCandidates(String name, String position, String officer){
+        Candidate newCand = new Candidate(name,position,officer);
+        activeCandidates.add(newCand);
+    }
+    
+    public static void addToArchivedCandidates(User User){
+        archivedUsers.add(User);
+        Collections.sort(archivedUsers, new SortById());
     }
     
     public static void addToVotes(Vote v){
@@ -104,25 +110,29 @@ public class Database {
     }
     
     public static void updateCandidate(int id, String name, String position, String officer){
-        candidates.get(id).setCandidateName(name, officer);
-        candidates.get(id).setPosition(position, officer);
+        activeCandidates.get(id).setCandidateName(name, officer);
+        activeCandidates.get(id).setPosition(position, officer);
     }
     
     public static boolean checkIfVoted(){
         return (votes.isEmpty());
     }
     
+    public static boolean removeFromCandidates(Candidate c){
+        return activeCandidates.remove(c);
+    }
+    
     public static boolean removeFromActiveUsersWhereIdIs(int id){
         int i=0;
-        for(; i < active.size(); i++){
-            if(active.get(i).getId() == id){
+        for(; i < activeUsers.size(); i++){
+            if(activeUsers.get(i).getId() == id){
                 break;
             }
         }
-        if(i != active.size()){
-            User User = active.get(i);
-            addToArchivedUsers(User);
-            active.remove(User);
+        if(i != activeUsers.size()){
+            User user = activeUsers.get(i);
+            addToArchivedUsers(user);
+            activeUsers.remove(user);
             return true;
         }else{
             return false;
@@ -131,13 +141,13 @@ public class Database {
     
     public static Candidate getFromCandidatesWhereNameIs(String name){
         int i=0;
-        for(; i < candidates.size(); i++){
-            if(candidates.get(i).getCandidateName().equals(name)){
+        for(; i < activeCandidates.size(); i++){
+            if(activeCandidates.get(i).getCandidateName().equals(name)){
                 break;
             }
         }
-        if(i != candidates.size()){
-            return candidates.get(i);
+        if(i != activeCandidates.size()){
+            return activeCandidates.get(i);
         }else{
             return null;
         }
@@ -145,13 +155,13 @@ public class Database {
     
     public static User getFromActiveUsersWhereIdIs(int id){
         int i=0;
-        for(; i < active.size(); i++){
-            if(active.get(i).getId() == id){
+        for(; i < activeUsers.size(); i++){
+            if(activeUsers.get(i).getId() == id){
                 break;
             }
         }
-        if(i != active.size()){
-            return active.get(id);
+        if(i != activeUsers.size()){
+            return activeUsers.get(id);
         }else{
             return null;
         }
@@ -159,24 +169,24 @@ public class Database {
     
     public static User getFromArchivedUsersWhereIdIs(int id){
         int i=0;
-        for(; i < archive.size(); i++){
-            if(archive.get(i).getId() == id){
+        for(; i < archivedUsers.size(); i++){
+            if(archivedUsers.get(i).getId() == id){
                 break;
             }
         }
-        if(i != archive.size()){
-            return archive.get(id);
+        if(i != archivedUsers.size()){
+            return archivedUsers.get(id);
         }else{
             return null;
         }
     }
     
     public static ArrayList<User> getActiveUsersIdSorted(){
-        return Database.active;
+        return Database.activeUsers;
     }
     
     public static ArrayList<User> getArchivedUsersIdSorted(){
-        return Database.archive;
+        return Database.activeUsers;
     }
     
 //    public static ArrayList<User> getActiveUsersYearPublishedSorted(){
