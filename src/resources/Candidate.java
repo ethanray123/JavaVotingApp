@@ -15,8 +15,9 @@ public class Candidate {
     private Date addedOn;
     private String updatedBy;
     private Date updatedOn;
+    private int id;
     
-    Candidate(String name, String pos, String user){
+    Candidate(int id, String name, String pos, String user){
         candidateName = name;
         position = pos;
         votes=0;

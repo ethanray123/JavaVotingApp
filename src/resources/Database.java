@@ -94,8 +94,8 @@ public class Database {
         Collections.sort(archive, new SortById());
     }
     
-    public static void addToCandidates(String name, String position, String user){
-        Candidate newCand = new Candidate(name,position,user);
+    public static void addToCandidates(int id, String name, String position, String user){
+        Candidate newCand = new Candidate(id,name,position,user);
         candidates.add(newCand);
     }
     

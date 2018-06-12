@@ -111,11 +111,11 @@ public class Login extends javax.swing.JFrame {
 
         username_icon.setIcon(new javax.swing.ImageIcon("C:\\Users\\Hazel Cavite\\Documents\\NetBeansProjects\\VotingApp\\JavaVotingApp\\img\\profile.png")); // NOI18N
         jPanel1.add(username_icon);
-        username_icon.setBounds(290, 220, 30, 50);
+        username_icon.setBounds(280, 280, 30, 50);
 
         username.setBackground(new java.awt.Color(238, 238, 238));
-        username.setFont(new java.awt.Font("Raleway", 0, 18)); // NOI18N
-        username.setForeground(new java.awt.Color(255, 255, 255));
+        username.setFont(new java.awt.Font("Raleway", 1, 18)); // NOI18N
+        username.setForeground(new java.awt.Color(0, 0, 0));
         username.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         username.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(67, 101, 102), 2, true));
         username.setOpaque(false);
@@ -125,21 +125,21 @@ public class Login extends javax.swing.JFrame {
             }
         });
         jPanel1.add(username);
-        username.setBounds(280, 220, 360, 50);
+        username.setBounds(270, 280, 360, 50);
 
         password_icon.setIcon(new javax.swing.ImageIcon("C:\\Users\\Hazel Cavite\\Documents\\NetBeansProjects\\VotingApp\\JavaVotingApp\\img\\key.png")); // NOI18N
         jPanel1.add(password_icon);
-        password_icon.setBounds(290, 310, 30, 50);
+        password_icon.setBounds(280, 370, 30, 50);
 
-        password.setFont(new java.awt.Font("Raleway", 0, 18)); // NOI18N
-        password.setForeground(new java.awt.Color(255, 255, 255));
+        password.setFont(new java.awt.Font("Raleway", 1, 18)); // NOI18N
+        password.setForeground(new java.awt.Color(0, 0, 0));
         password.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         password.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(67, 101, 102), 2, true));
         password.setOpaque(false);
         jPanel1.add(password);
-        password.setBounds(280, 310, 360, 50);
+        password.setBounds(270, 370, 360, 50);
 
-        login.setBackground(new java.awt.Color(155, 75, 77));
+        login.setBackground(new java.awt.Color(196, 75, 77));
         login.setFont(new java.awt.Font("Raleway", 0, 18)); // NOI18N
         login.setForeground(new java.awt.Color(255, 255, 255));
         login.setText("LOGIN");
@@ -155,11 +155,11 @@ public class Login extends javax.swing.JFrame {
             }
         });
         jPanel1.add(login);
-        login.setBounds(280, 390, 360, 50);
+        login.setBounds(270, 450, 360, 50);
 
         background.setIcon(new javax.swing.ImageIcon("C:\\Users\\Hazel Cavite\\Documents\\NetBeansProjects\\VotingApp\\JavaVotingApp\\img\\vote4.png")); // NOI18N
         jPanel1.add(background);
-        background.setBounds(220, 130, 500, 380);
+        background.setBounds(210, 120, 483, 410);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
