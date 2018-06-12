@@ -1,20 +1,31 @@
 
 package votingapp;
-
+import resources.*;
 import java.awt.Color;
+import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 
 public class Home_Officer extends javax.swing.JFrame {
     // 0,17,36
     // 2,49,74    
     // 7,107,143
-    
+    ArrayList<Candidate> CandList = new ArrayList<Candidate>();
     public Home_Officer() {
         initComponents();
+        initial();
         dashboard();
+        addRowToJTable();
     }
     
-   
+    public void initial(){
+        Database.addToCandidates(0, "Renz Bernados", "President", "Hazel");    
+        Database.addToCandidates(1,"Marvin Lim ","President","Hazel");
+        Database.addToCandidates(1,"Hazel Cavite","President","Ethan");
+      
+        CandList.addAll(Database.getCandidateList());
+        System.out.println(CandList.size());
+        
+    }
     public void dashboard()
     {
         //set bg color when sidebar tab clicked
@@ -83,8 +94,6 @@ public class Home_Officer extends javax.swing.JFrame {
         left_sidebar.setBackground(new java.awt.Color(2, 49, 74));
         left_sidebar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         left_sidebar.setLayout(null);
-
-        userimg.setIcon(new javax.swing.ImageIcon("C:\\Users\\Hazel Cavite\\Documents\\NetBeansProjects\\VotingApp\\JavaVotingApp\\img\\user.png")); // NOI18N
         left_sidebar.add(userimg);
         userimg.setBounds(73, 56, 100, 110);
 
@@ -125,7 +134,7 @@ public class Home_Officer extends javax.swing.JFrame {
         );
 
         left_sidebar.add(dashboard_side);
-        dashboard_side.setBounds(0, 280, 250, 60);
+        dashboard_side.setBounds(0, 280, 250, 58);
 
         candidates_side.setBackground(new java.awt.Color(2, 49, 74));
         candidates_side.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -157,7 +166,7 @@ public class Home_Officer extends javax.swing.JFrame {
         );
 
         left_sidebar.add(candidates_side);
-        candidates_side.setBounds(0, 340, 250, 60);
+        candidates_side.setBounds(0, 340, 250, 58);
 
         jPanel1.add(left_sidebar);
         left_sidebar.setBounds(0, 0, 250, 620);
@@ -170,8 +179,6 @@ public class Home_Officer extends javax.swing.JFrame {
         searchbar_panel.setMaximumSize(new java.awt.Dimension(940, 618));
         searchbar_panel.setMinimumSize(new java.awt.Dimension(940, 618));
         searchbar_panel.setLayout(null);
-
-        search_icon.setIcon(new javax.swing.ImageIcon("C:\\Users\\Hazel Cavite\\Documents\\NetBeansProjects\\Optimal Inventory System\\OptimalInventorySystem-development\\img\\growth.png")); // NOI18N
         searchbar_panel.add(search_icon);
         search_icon.setBounds(400, 20, 30, 40);
 
@@ -198,7 +205,7 @@ public class Home_Officer extends javax.swing.JFrame {
         candidatesTable.setFont(new java.awt.Font("Raleway", 0, 12)); // NOI18N
         candidatesTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Marvin Lim", "President", "200"}
+
             },
             new String [] {
                 "Name", "Position", "No. of Votes"
@@ -435,7 +442,19 @@ public class Home_Officer extends javax.swing.JFrame {
         
         setTextFields(candidate_name, candidate_pos, numVotes);
     }//GEN-LAST:event_candidatesTableMouseClicked
-
+    public void addRowToJTable()
+    {
+        DefaultTableModel model = (DefaultTableModel) candidatesTable.getModel();
+       
+        Object rowData[] = new Object[3];
+        for(int i = 0; i < CandList.size(); i++){
+            rowData[0] = CandList.get(i).getCandidateName();
+            rowData[1] = CandList.get(i).getPosition();
+            rowData[2] = CandList.get(i).getVotes();
+           
+            model.addRow(rowData);
+        }
+    }
     public static void main(String args[]) {
        
         java.awt.EventQueue.invokeLater(new Runnable() {
