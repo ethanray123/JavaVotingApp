@@ -186,7 +186,7 @@ public class Home_Officer extends javax.swing.JFrame {
         jScrollPane1.setBounds(30, 160, 630, 250);
 
         add.setBackground(new java.awt.Color(0, 153, 51));
-        add.setFont(new java.awt.Font("Raleway", 0, 18)); // NOI18N
+        add.setFont(new java.awt.Font("Raleway", 0, 14)); // NOI18N
         add.setForeground(new java.awt.Color(255, 255, 255));
         add.setText("ADD");
         add.setBorder(null);
