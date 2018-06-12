@@ -61,14 +61,14 @@ public class Home_Voter extends javax.swing.JFrame {
         left_sidebar.setBackground(new java.awt.Color(2, 49, 74));
         left_sidebar.setLayout(null);
 
-        userimg.setIcon(new javax.swing.ImageIcon("C:\\Users\\student.CEACCS\\Documents\\Hazel\\JavaVotingApp\\img\\user.png")); // NOI18N
+        userimg.setIcon(new javax.swing.ImageIcon("C:\\Users\\Hazel Cavite\\Documents\\NetBeansProjects\\VotingApp\\JavaVotingApp\\img\\user.png")); // NOI18N
         left_sidebar.add(userimg);
         userimg.setBounds(73, 56, 100, 110);
 
-        user_label.setFont(new java.awt.Font("Yu Gothic UI", 1, 24)); // NOI18N
+        user_label.setFont(new java.awt.Font("Raleway", 0, 18)); // NOI18N
         user_label.setForeground(new java.awt.Color(255, 255, 255));
         user_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        user_label.setText("Voter");
+        user_label.setText("VOTER");
         left_sidebar.add(user_label);
         user_label.setBounds(10, 180, 230, 40);
 
@@ -79,7 +79,7 @@ public class Home_Voter extends javax.swing.JFrame {
             }
         });
 
-        dashboard_side_label.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        dashboard_side_label.setFont(new java.awt.Font("Raleway", 0, 14)); // NOI18N
         dashboard_side_label.setForeground(new java.awt.Color(255, 255, 255));
         dashboard_side_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         dashboard_side_label.setText("DASHBOARD");
@@ -102,7 +102,7 @@ public class Home_Voter extends javax.swing.JFrame {
         );
 
         left_sidebar.add(dashboard_side);
-        dashboard_side.setBounds(0, 280, 250, 58);
+        dashboard_side.setBounds(0, 280, 250, 60);
 
         candidates_side.setBackground(new java.awt.Color(2, 49, 74));
         candidates_side.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -111,7 +111,7 @@ public class Home_Voter extends javax.swing.JFrame {
             }
         });
 
-        candidates_side_label.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        candidates_side_label.setFont(new java.awt.Font("Raleway", 0, 14)); // NOI18N
         candidates_side_label.setForeground(new java.awt.Color(255, 255, 255));
         candidates_side_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         candidates_side_label.setText("VOTE CANDIDATES");
@@ -134,7 +134,7 @@ public class Home_Voter extends javax.swing.JFrame {
         );
 
         left_sidebar.add(candidates_side);
-        candidates_side.setBounds(0, 340, 250, 58);
+        candidates_side.setBounds(0, 340, 250, 60);
 
         jPanel1.add(left_sidebar);
         left_sidebar.setBounds(0, 0, 250, 620);
@@ -142,7 +142,7 @@ public class Home_Voter extends javax.swing.JFrame {
         dashboard.setBackground(new java.awt.Color(0, 17, 36));
         dashboard.setCursor(new java.awt.Cursor(java.awt.Cursor.NE_RESIZE_CURSOR));
 
-        dashboard_right_label.setFont(new java.awt.Font("Yu Gothic UI", 1, 24)); // NOI18N
+        dashboard_right_label.setFont(new java.awt.Font("Raleway", 0, 14)); // NOI18N
         dashboard_right_label.setForeground(new java.awt.Color(255, 255, 255));
         dashboard_right_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         dashboard_right_label.setText("this is dashboard");
@@ -174,7 +174,7 @@ public class Home_Voter extends javax.swing.JFrame {
         candidates.setBackground(new java.awt.Color(0, 17, 36));
         candidates.setCursor(new java.awt.Cursor(java.awt.Cursor.NE_RESIZE_CURSOR));
 
-        candidates_right_label.setFont(new java.awt.Font("Yu Gothic UI", 1, 24)); // NOI18N
+        candidates_right_label.setFont(new java.awt.Font("Raleway", 0, 14)); // NOI18N
         candidates_right_label.setForeground(new java.awt.Color(255, 255, 255));
         candidates_right_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         candidates_right_label.setText("this is candidates");
