@@ -37,11 +37,11 @@ public class Home_Officer extends javax.swing.JFrame {
         dashboard.setVisible(false);
     }
     
-    public void setTextFields(String can_name, String can_pos, int can_votes)
+    public void setTextFields(String can_name, String can_pos, String can_votes)
     {
-        name.setText(""+can_name);
-        position.setText(""+can_pos);
-        numvotes.setText(""+can_votes);
+        name.setText(can_name);
+        position.setSelectedItem(can_pos);
+        numvotes.setText(can_votes);
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -59,16 +59,17 @@ public class Home_Officer extends javax.swing.JFrame {
         searchbar_panel = new javax.swing.JPanel();
         search_icon = new javax.swing.JLabel();
         searchbar_dashboard = new javax.swing.JTextField();
-        jScrollPane1 = new javax.swing.JScrollPane();
+        statuslabel = new javax.swing.JLabel();
+        candidates_jScrollPane = new javax.swing.JScrollPane();
         candidatesTable = new javax.swing.JTable();
         namelabel = new javax.swing.JLabel();
         name = new javax.swing.JTextField();
         positionlabel = new javax.swing.JLabel();
-        position = new javax.swing.JTextField();
         numvoteslabel = new javax.swing.JLabel();
         numvotes = new javax.swing.JTextField();
         add = new javax.swing.JButton();
         update = new javax.swing.JButton();
+        position = new javax.swing.JComboBox<>();
         dashboard = new javax.swing.JPanel();
         dashboard_right_label = new javax.swing.JLabel();
 
@@ -188,6 +189,12 @@ public class Home_Officer extends javax.swing.JFrame {
         searchbar_panel.add(searchbar_dashboard);
         searchbar_dashboard.setBounds(390, 20, 280, 40);
 
+        statuslabel.setFont(new java.awt.Font("Raleway", 0, 18)); // NOI18N
+        statuslabel.setForeground(new java.awt.Color(0, 153, 51));
+        statuslabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        searchbar_panel.add(statuslabel);
+        statuslabel.setBounds(30, 100, 640, 30);
+
         candidatesTable.setFont(new java.awt.Font("Raleway", 0, 12)); // NOI18N
         candidatesTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -203,10 +210,10 @@ public class Home_Officer extends javax.swing.JFrame {
                 candidatesTableMouseClicked(evt);
             }
         });
-        jScrollPane1.setViewportView(candidatesTable);
+        candidates_jScrollPane.setViewportView(candidatesTable);
 
-        searchbar_panel.add(jScrollPane1);
-        jScrollPane1.setBounds(30, 140, 640, 210);
+        searchbar_panel.add(candidates_jScrollPane);
+        candidates_jScrollPane.setBounds(30, 140, 640, 210);
 
         namelabel.setFont(new java.awt.Font("Raleway", 1, 14)); // NOI18N
         namelabel.setForeground(new java.awt.Color(196, 75, 77));
@@ -216,7 +223,7 @@ public class Home_Officer extends javax.swing.JFrame {
         namelabel.setBounds(60, 390, 260, 20);
 
         name.setBackground(new java.awt.Color(15, 74, 74));
-        name.setFont(new java.awt.Font("Raleway", 1, 14)); // NOI18N
+        name.setFont(new java.awt.Font("Raleway", 0, 14)); // NOI18N
         name.setForeground(new java.awt.Color(255, 255, 255));
         name.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         name.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 2, true));
@@ -236,20 +243,6 @@ public class Home_Officer extends javax.swing.JFrame {
         searchbar_panel.add(positionlabel);
         positionlabel.setBounds(380, 390, 260, 20);
 
-        position.setBackground(new java.awt.Color(15, 74, 74));
-        position.setFont(new java.awt.Font("Raleway", 1, 14)); // NOI18N
-        position.setForeground(new java.awt.Color(255, 255, 255));
-        position.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        position.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 2, true));
-        position.setOpaque(false);
-        position.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                positionActionPerformed(evt);
-            }
-        });
-        searchbar_panel.add(position);
-        position.setBounds(380, 420, 260, 40);
-
         numvoteslabel.setFont(new java.awt.Font("Raleway", 1, 14)); // NOI18N
         numvoteslabel.setForeground(new java.awt.Color(196, 75, 77));
         numvoteslabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -258,7 +251,7 @@ public class Home_Officer extends javax.swing.JFrame {
         numvoteslabel.setBounds(60, 470, 260, 20);
 
         numvotes.setBackground(new java.awt.Color(15, 74, 74));
-        numvotes.setFont(new java.awt.Font("Raleway", 1, 14)); // NOI18N
+        numvotes.setFont(new java.awt.Font("Raleway", 0, 14)); // NOI18N
         numvotes.setForeground(new java.awt.Color(255, 255, 255));
         numvotes.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         numvotes.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 2, true));
@@ -306,6 +299,11 @@ public class Home_Officer extends javax.swing.JFrame {
         });
         searchbar_panel.add(update);
         update.setBounds(540, 500, 100, 40);
+
+        position.setFont(new java.awt.Font("Raleway", 0, 14)); // NOI18N
+        position.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "President", "Vice President", "Senator", "District Representative", "Governor", "Mayor" }));
+        searchbar_panel.add(position);
+        position.setBounds(380, 420, 260, 40);
 
         javax.swing.GroupLayout candidatesLayout = new javax.swing.GroupLayout(candidates);
         candidates.setLayout(candidatesLayout);
@@ -392,10 +390,6 @@ public class Home_Officer extends javax.swing.JFrame {
 
     }//GEN-LAST:event_updateActionPerformed
 
-    private void positionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_positionActionPerformed
-        
-    }//GEN-LAST:event_positionActionPerformed
-
     private void nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameActionPerformed
         
     }//GEN-LAST:event_nameActionPerformed
@@ -409,7 +403,24 @@ public class Home_Officer extends javax.swing.JFrame {
     }//GEN-LAST:event_addMouseClicked
 
     private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
-        
+        if(!name.getText().isEmpty() && !position.getSelectedItem().toString().isEmpty()
+            && !numvotes.getText().isEmpty()){
+
+            String can_name = name.getText();
+
+            String can_pos = position.getSelectedItem().toString();
+
+            String can_votes = numvotes.getText();
+            
+            DefaultTableModel model = (DefaultTableModel) candidatesTable.getModel();
+            model.addRow(new Object[]{
+                can_name, can_pos, can_votes
+            });
+            
+            statuslabel.setText("SUCESSFULLY ADDED!");
+        }else{
+            statuslabel.setText("There is an error in your input!");
+        }
     }//GEN-LAST:event_addActionPerformed
 
     private void candidatesTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_candidatesTableMouseClicked
@@ -422,10 +433,7 @@ public class Home_Officer extends javax.swing.JFrame {
 
         String numVotes = model.getValueAt(selectedRowIndex, 2).toString();
         
-        name.setText(candidate_name);
-        position.setText(candidate_pos);
-        numvotes.setText(numVotes);
-        //setTextFields(candidate_name, candidate_pos, numVotes);
+        setTextFields(candidate_name, candidate_pos, numVotes);
     }//GEN-LAST:event_candidatesTableMouseClicked
 
     public static void main(String args[]) {
@@ -441,6 +449,7 @@ public class Home_Officer extends javax.swing.JFrame {
     private javax.swing.JButton add;
     private javax.swing.JPanel candidates;
     private javax.swing.JTable candidatesTable;
+    private javax.swing.JScrollPane candidates_jScrollPane;
     private javax.swing.JPanel candidates_side;
     private javax.swing.JLabel candidates_side_label;
     private javax.swing.JPanel dashboard;
@@ -448,17 +457,17 @@ public class Home_Officer extends javax.swing.JFrame {
     private javax.swing.JPanel dashboard_side;
     private javax.swing.JLabel dashboard_side_label;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPanel left_sidebar;
     private javax.swing.JTextField name;
     private javax.swing.JLabel namelabel;
     private javax.swing.JTextField numvotes;
     private javax.swing.JLabel numvoteslabel;
-    private javax.swing.JTextField position;
+    private javax.swing.JComboBox<String> position;
     private javax.swing.JLabel positionlabel;
     private javax.swing.JLabel search_icon;
     private javax.swing.JTextField searchbar_dashboard;
     private javax.swing.JPanel searchbar_panel;
+    private javax.swing.JLabel statuslabel;
     private javax.swing.JButton update;
     private javax.swing.JLabel user_label;
     private javax.swing.JLabel userimg;
