@@ -2,6 +2,7 @@
 package votingapp;
 import resources.*;
 import java.awt.Color;
+import static java.lang.Integer.parseInt;
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 
@@ -9,6 +10,7 @@ public class Home_Officer extends javax.swing.JFrame {
     // 0,17,36
     // 2,49,74    
     // 7,107,143
+    public static int statuscolor = 0;
     ArrayList<Candidate> CandList = new ArrayList<Candidate>();
     public Home_Officer() {
         initComponents();
@@ -18,12 +20,21 @@ public class Home_Officer extends javax.swing.JFrame {
     }
     
     public void initial(){
-        Database.addToCandidates(0, "Renz Bernados", "President", "Hazel");    
-        Database.addToCandidates(1,"Marvin Lim ","President","Hazel");
-        Database.addToCandidates(1,"Hazel Cavite","President","Ethan");
-      
+        Database.addToCandidates(0, "Renz Bernados", "President", "Joshua");    
+        Database.addToCandidates(1,"Marvin Lim","President","Joshua");
+        Database.addToCandidates(2,"Jerly Palacio","Senator","Joshua");
+        Database.addToCandidates(3,"Janel Duenas","District Representative","Joshua");
+        Database.addToCandidates(4,"Vince Villamora","Mayor","Joshua");
+        Database.addToCandidates(5,"Allena Zamoras","President","Joshua");
+        Database.addToCandidates(6,"Zairiel Sarausad","Vice President","Joshua");
+        Database.addToCandidates(7,"Joshua Isanan","Governor","Joshua");
+        Database.addToCandidates(8,"Kasey Cuyos","President","Joshua");
+        Database.addToCandidates(9,"Daniel Ubanan","Vice President","Joshua");
+        Database.addToCandidates(10,"Grace Maureal","Senator","Joshua");
+        Database.addToCandidates(11,"Joaquin Lava","Mayor","Joshua");
+        Database.addToCandidates(12,"Jericho Mesina","Vice President","Joshua");
+        
         CandList.addAll(Database.getCandidateList());
-        System.out.println(CandList.size());
         
     }
     public void dashboard()
@@ -415,7 +426,7 @@ public class Home_Officer extends javax.swing.JFrame {
 
     private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
         if(!name.getText().isEmpty() && !position.getSelectedItem().toString().isEmpty()
-            && !numvotes.getText().isEmpty()){
+            && !numvotes.getText().isEmpty() && numvotes.getText().matches("[0-9]+")){
 
             String can_name = name.getText();
 
@@ -427,10 +438,11 @@ public class Home_Officer extends javax.swing.JFrame {
             model.addRow(new Object[]{
                 can_name, can_pos, can_votes
             });
-            
+            statuslabel.setForeground(new Color(0,153,51));
             statuslabel.setText("SUCESSFULLY ADDED!");
         }else{
-            statuslabel.setText("There is an error in your input!");
+            statuslabel.setForeground(new Color(196,75,77));
+            statuslabel.setText("THERE IS AN ERROR IN YOUR INPUT!");
         }
     }//GEN-LAST:event_addActionPerformed
 
