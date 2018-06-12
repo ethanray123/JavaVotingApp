@@ -94,6 +94,8 @@ public class Home_Officer extends javax.swing.JFrame {
         left_sidebar.setBackground(new java.awt.Color(2, 49, 74));
         left_sidebar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         left_sidebar.setLayout(null);
+
+        userimg.setIcon(new javax.swing.ImageIcon("C:\\Users\\Hazel Cavite\\Documents\\NetBeansProjects\\VotingApp\\JavaVotingApp\\img\\user.png")); // NOI18N
         left_sidebar.add(userimg);
         userimg.setBounds(73, 56, 100, 110);
 
@@ -134,7 +136,7 @@ public class Home_Officer extends javax.swing.JFrame {
         );
 
         left_sidebar.add(dashboard_side);
-        dashboard_side.setBounds(0, 280, 250, 58);
+        dashboard_side.setBounds(0, 280, 250, 60);
 
         candidates_side.setBackground(new java.awt.Color(2, 49, 74));
         candidates_side.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -166,7 +168,7 @@ public class Home_Officer extends javax.swing.JFrame {
         );
 
         left_sidebar.add(candidates_side);
-        candidates_side.setBounds(0, 340, 250, 58);
+        candidates_side.setBounds(0, 340, 250, 60);
 
         jPanel1.add(left_sidebar);
         left_sidebar.setBounds(0, 0, 250, 620);
@@ -179,6 +181,8 @@ public class Home_Officer extends javax.swing.JFrame {
         searchbar_panel.setMaximumSize(new java.awt.Dimension(940, 618));
         searchbar_panel.setMinimumSize(new java.awt.Dimension(940, 618));
         searchbar_panel.setLayout(null);
+
+        search_icon.setIcon(new javax.swing.ImageIcon("C:\\Users\\Hazel Cavite\\Documents\\NetBeansProjects\\VotingApp\\JavaVotingApp\\img\\growth.png")); // NOI18N
         searchbar_panel.add(search_icon);
         search_icon.setBounds(400, 20, 30, 40);
 
