@@ -5,14 +5,20 @@
  */
 package resources;
 
+import static resources.Database.addToVotes;
 /**
  *
  * @author student
  */
 public class Voter extends User{
     
-    public Voter(String un, String fn, String ln, String addedby) {
-        super(un, fn, ln, addedby);
+    public Voter(String un, String fn, String ln, String addedby, int idNo) {
+        super(un, fn, ln, addedby, idNo);
+    }
+
+    public void voteCandidate(String candidate, String position){
+    	Vote newVote = new Vote(this.id, candidate, position);
+    	addToVotes(newVote);
     }
     
 }

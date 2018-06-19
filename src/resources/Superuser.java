@@ -6,7 +6,7 @@
 package resources;
 
 import static resources.Database.addToActiveUsers;
-
+import static resources.Database.removeFromUsers;
 /**
  *
  * @author student
@@ -25,22 +25,13 @@ public class Superuser extends User{
         addToActiveUsers(voter);
     }
     
-    public void removeOfficer(){
-        
-        
-    }
-    public void removeVoter(){
-        
+    public void removeUser(User user){
+        removeFromUsers(user);
     }
     
-    public void updateOfficer(){
-        
-    }
-    
-    public void updateVoter(){
-        
-    }
-    
-    
+    public static void updateUser(int id, String name, String position, String officer){
+        activeCandidates.get(id).setFirstName(name, officer);
+        activeCandidates.get(id).setPosition(position, officer);
+    } 
     
 }

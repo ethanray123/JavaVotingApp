@@ -6,6 +6,9 @@
 package resources;
 
 import static resources.Database.addToCandidates;
+import static resources.Database.removeFromCandidates;
+import static resources.Database.getFromActiveCandidatesWhereNameIs;
+import static resources.Database.activeCandidates;
 
 /**
  *
@@ -21,7 +24,13 @@ public class Officer extends User{
         addToCandidates(name,position,this.getUsername());
     }
     
-    public void removeCandidate(int id){
-//        removeFromCandidates(id);
+    public void removeCandidate(int candName){
+    	Candidate cand = getFromActiveCandidatesWhereNameIs(candName);
+        removeFromCandidates(cand);
+    }
+
+    public static void updateCandidate(int id, String name, String position, String officer){
+        activeCandidates.get(id).setCandidateName(name, officer);
+        activeCandidates.get(id).setPosition(position, officer);
     }
 }
