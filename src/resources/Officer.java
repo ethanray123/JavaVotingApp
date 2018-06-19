@@ -8,7 +8,7 @@ package resources;
 import static resources.Database.addToCandidates;
 import static resources.Database.removeFromCandidates;
 import static resources.Database.getFromActiveCandidatesWhereNameIs;
-import static resources.Database.activeCandidates;
+import static resources.Database.updateCandidate;
 
 /**
  *
@@ -21,16 +21,15 @@ public class Officer extends User{
     }
     
     public void addCandidate(String name, String position){
-        addToCandidates(name,position,this.getUsername());
+        addToCandidates(name,position,this.getUserName());
     }
     
-    public void removeCandidate(int candName){
+    public void removeCandidate(String candName){
     	Candidate cand = getFromActiveCandidatesWhereNameIs(candName);
         removeFromCandidates(cand);
     }
 
-    public static void updateCandidate(int id, String name, String position, String officer){
-        activeCandidates.get(id).setCandidateName(name, officer);
-        activeCandidates.get(id).setPosition(position, officer);
+    public static void updateCandidateInfo(int id, String name, String position, String officer){
+        updateCandidate(id,name,position,officer);
     }
 }

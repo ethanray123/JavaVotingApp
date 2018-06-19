@@ -121,7 +121,6 @@ public class Database {
     public static void addToCandidates(String name, String position, String officer){
         Candidate newCand = new Candidate(name,position,officer);
         activeCandidates.add(newCand);
-        Collections.sort
     }
     
     public static void addToArchivedCandidates(User User){
@@ -160,6 +159,19 @@ public class Database {
         }else{
             return false;
         }
+    }
+    
+    public static void updateCandidate(int id, String name, String position, String officer){
+        activeCandidates.get(id).setCandidateName(name, officer);
+        activeCandidates.get(id).setPosition(position, officer);
+    }
+    
+    public static void updateUser(int id, String fn, String ln, String un, String updatedby){
+        activeUsers.get(id).setFirstName(fn);
+        activeUsers.get(id).setLastName(ln);
+        activeUsers.get(id).setUserName(un);
+        activeUsers.get(id).setDateUpdated();
+        activeUsers.get(id).setUpdatedBy(updatedby);
     }
     
     public static Candidate getFromActiveCandidatesWhereNameIs(String name){

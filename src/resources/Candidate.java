@@ -8,6 +8,7 @@ import java.util.Date;
  * @author Ethan Mosqueda
  */
 public class Candidate {
+    private int id;
     private String candidateName;
     private String position;
     private int votes;

@@ -1,6 +1,8 @@
 
 package resources;
 
+import java.util.Date;
+
 public class Vote {
 	private int voteId;
 	private int voterId; //id attr from Voter
