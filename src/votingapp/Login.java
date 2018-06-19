@@ -25,7 +25,7 @@ public class Login extends javax.swing.JFrame {
         Voter v1 = new Voter("Ethan", "Ethan Ray", "Mosqueda", "superuser");
         Voter v2 = new Voter("Hazel", "Hazel", "Cavite", "superuser");
         Officer o = new Officer("Joshua", "Joshua", "Ty", "superuser");
-        Superuser s = new Superuser("superuser", "Allena", "Zamoras", "superuser");
+        Superuser s = new Superuser("Allena", "Allena", "Zamoras", "superuser");
     }
     
     public void setUsernameList()
