@@ -17,7 +17,6 @@ public class Candidate {
     private String updatedBy;
     private Date dateUpdated;
     
-   
     public Candidate(String name, String pos, String user){
         this.id = Database.assignCandidateId();
         this.candidateName = name;
@@ -26,6 +25,7 @@ public class Candidate {
         this.addedOn = new Date();
         this.addedBy = user;
     }
+    
     public String getCandidateName(){
         return this.candidateName;
     }
