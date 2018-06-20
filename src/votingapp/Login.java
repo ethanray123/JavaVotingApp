@@ -3,6 +3,7 @@ package votingapp;
 
 import java.awt.Color;
 import java.util.ArrayList;
+import resources.Database;
 import resources.Officer;
 import resources.Superuser;
 import resources.Voter;
@@ -11,22 +12,22 @@ public class Login extends javax.swing.JFrame {
     // 2 voters, 1 officer, 1 superuser
     public static ArrayList<String> passwordList = new ArrayList<>();
     public static ArrayList<String> usernameList = new ArrayList<>();
+    public static Voter v1 = new Voter("Ethan", "Ethan Ray", "Mosqueda", "Allena");
+    public static Voter v2 = new Voter("Hazel", "Hazel", "Cavite", "Allena");
+    public static Officer o = new Officer("Joshua", "Joshua", "Ty", "Allena");
+    public static Superuser s = new Superuser("Allena", "Allena", "Zamoras", "Allena");
     public static String user;
+    public static int userId = -1;
     public Login() {
         initComponents();
         username.setBackground(new Color(0, 0, 0, 64));
         password.setBackground(new Color(0, 0, 0, 64));
-        setDummyUser();
+        Database.addToActiveUsers(v1);
+        Database.addToActiveUsers(v2);
+        Database.addToActiveUsers(o);
+        Database.addToActiveUsers(s);
         setUsernameList();
         setPasswordList();
-        
-    }
-    public void setDummyUser() 
-    {
-        Voter v1 = new Voter("Ethan", "Ethan Ray", "Mosqueda", "superuser");
-        Voter v2 = new Voter("Hazel", "Hazel", "Cavite", "superuser");
-        Officer o = new Officer("Joshua", "Joshua", "Ty", "superuser");
-        Superuser s = new Superuser("Allena", "Allena", "Zamoras", "superuser");
     }
     
     public void setUsernameList()
@@ -55,55 +56,60 @@ public class Login extends javax.swing.JFrame {
                     // Voters
                     case "Ethan":
                         user = "Ethan";
+                        userId = v1.getId();
                         new Home_Voter().setVisible(true);
                         this.dispose();
                         break;
                     case "Hazel":
                         user = "Hazel";
+                        userId = v2.getId();
                         new Home_Voter().setVisible(true);
                         this.dispose();
                         break;
-                    case "Daniela":
-                        user = "Daniela";
-                        new Home_Voter().setVisible(true);
-                        this.dispose();
-                        break;
-                    case "Maddie":
-                        user = "Maddie";
-                        new Home_Voter().setVisible(true);
-                        this.dispose();
-                        break;
+//                    case "Daniela":
+//                        user = "Daniela";
+//                        new Home_Voter().setVisible(true);
+//                        this.dispose();
+//                        break;
+//                    case "Maddie":
+//                        user = "Maddie";
+//                        new Home_Voter().setVisible(true);
+//                        this.dispose();
+//                        break;
                         
                     //Officers
                     case "Joshua":
                         user = "Joshua";
+                        userId = o.getId();
                         new Home_Officer().setVisible(true);
+                        
                         this.dispose();
                         break;
-                    case "Rosslyn":
-                        user = "Rosslyn";
-                        new Home_Officer().setVisible(true);
-                        this.dispose();
-                        break;
-                    case "Earvin":
-                        user = "Earvin";
-                        new Home_Officer().setVisible(true);
-                        this.dispose();
-                        break;
-                    case "Terrence":
-                        user = "Terrence";
-                        new Home_Officer().setVisible(true);
-                        this.dispose();
-                        break;
-                    case "Gian":
-                        user = "Gian";
-                        new Home_Officer().setVisible(true);
-                        this.dispose();
-                        break;
+//                    case "Rosslyn":
+//                        user = "Rosslyn";
+//                        new Home_Officer().setVisible(true);
+//                        this.dispose();
+//                        break;
+//                    case "Earvin":
+//                        user = "Earvin";
+//                        new Home_Officer().setVisible(true);
+//                        this.dispose();
+//                        break;
+//                    case "Terrence":
+//                        user = "Terrence";
+//                        new Home_Officer().setVisible(true);
+//                        this.dispose();
+//                        break;
+//                    case "Gian":
+//                        user = "Gian";
+//                        new Home_Officer().setVisible(true);
+//                        this.dispose();
+//                        break;
                         
                     // Superusers
                     case "Allena":
                         user = "Allena";
+                        userId = s.getId();
                         new Home_SuperUser().setVisible(true);
                         this.dispose();
                         break;

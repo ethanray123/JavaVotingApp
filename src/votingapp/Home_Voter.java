@@ -8,6 +8,7 @@ import javax.swing.table.DefaultTableModel;
 import resources.Candidate;
 import resources.Database;
 import static votingapp.Login.user;
+import static votingapp.Login.userId;
 
 public class Home_Voter extends javax.swing.JFrame {
     

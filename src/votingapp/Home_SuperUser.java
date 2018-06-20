@@ -8,6 +8,7 @@ import javax.swing.table.DefaultTableModel;
 import resources.Database;
 import resources.Superuser;
 import static votingapp.Login.user;
+import static votingapp.Login.userId;
 
 public class Home_SuperUser extends javax.swing.JFrame {
     // 0,17,36
