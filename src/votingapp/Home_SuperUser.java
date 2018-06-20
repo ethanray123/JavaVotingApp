@@ -20,7 +20,7 @@ public class Home_SuperUser extends javax.swing.JFrame {
     public static int officerid = 6;
     public Home_SuperUser() {
         initComponents();
-        dashboard();
+        officers_sideBar_onclick();
         initialOfficer();
         addRowToOfficerJTable();
         initialVoter();
@@ -86,31 +86,15 @@ public class Home_SuperUser extends javax.swing.JFrame {
         
     }
     
-    public void dashboard()
-    {
-        //set bg color when sidebar tab clicked
-        dashboard_side.setBackground(new Color(7,107,143));
-        officers_side.setBackground(new Color(2,49,74));
-        voters_side.setBackground(new Color(2,49,74));
-        logout_side.setBackground(new Color(2,49,74));
-        
-        // hide and show right side jPanels
-        dashboard.setVisible(true);
-        officers.setVisible(false);
-        voters.setVisible(false);
-        
-    }
     public void officers_sideBar_onclick()
     {
         //set bg color when sidebar tab clicked
         officers_side.setBackground(new Color(7,107,143));
-        dashboard_side.setBackground(new Color(2,49,74));
         voters_side.setBackground(new Color(2,49,74));
         logout_side.setBackground(new Color(2,49,74));
         
         // hide and show right side jPanels
         officers.setVisible(true);
-        dashboard.setVisible(false);
         voters.setVisible(false);
     }
     
@@ -118,19 +102,16 @@ public class Home_SuperUser extends javax.swing.JFrame {
     {
         //set bg color when sidebar tab clicked
         voters_side.setBackground(new Color(7,107,143));
-        dashboard_side.setBackground(new Color(2,49,74));
         officers_side.setBackground(new Color(2,49,74));
         logout_side.setBackground(new Color(2,49,74));
         
         // hide and show right side jPanels
         voters.setVisible(true);
-        dashboard.setVisible(false);
         officers.setVisible(false);
     }
     public void logout_sideBar_onclick()
     {
         logout_side.setBackground(new Color(7,107,143));
-        dashboard_side.setBackground(new Color(2,49,74));
         voters_side.setBackground(new Color(2,49,74));
         officers_side.setBackground(new Color(2,49,74));
         
@@ -193,8 +174,6 @@ public class Home_SuperUser extends javax.swing.JFrame {
         userimg = new javax.swing.JLabel();
         user_label = new javax.swing.JLabel();
         username = new javax.swing.JLabel();
-        dashboard_side = new javax.swing.JPanel();
-        dashboard_side_label = new javax.swing.JLabel();
         officers_side = new javax.swing.JPanel();
         officers_side_label = new javax.swing.JLabel();
         voters_side = new javax.swing.JPanel();
@@ -225,8 +204,6 @@ public class Home_SuperUser extends javax.swing.JFrame {
         addVoter = new javax.swing.JButton();
         deleteVoter = new javax.swing.JButton();
         updateVoter = new javax.swing.JButton();
-        dashboard = new javax.swing.JPanel();
-        dashboard_right_label = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -254,38 +231,6 @@ public class Home_SuperUser extends javax.swing.JFrame {
         username.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         left_sidebar.add(username);
         username.setBounds(0, 210, 250, 30);
-
-        dashboard_side.setBackground(new java.awt.Color(7, 107, 143));
-        dashboard_side.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                dashboard_sideMouseClicked(evt);
-            }
-        });
-
-        dashboard_side_label.setFont(new java.awt.Font("Raleway", 0, 14)); // NOI18N
-        dashboard_side_label.setForeground(new java.awt.Color(255, 255, 255));
-        dashboard_side_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        dashboard_side_label.setText("DASHBOARD");
-
-        javax.swing.GroupLayout dashboard_sideLayout = new javax.swing.GroupLayout(dashboard_side);
-        dashboard_side.setLayout(dashboard_sideLayout);
-        dashboard_sideLayout.setHorizontalGroup(
-            dashboard_sideLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(dashboard_sideLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(dashboard_side_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        dashboard_sideLayout.setVerticalGroup(
-            dashboard_sideLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(dashboard_sideLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(dashboard_side_label, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
-        left_sidebar.add(dashboard_side);
-        dashboard_side.setBounds(0, 280, 250, 60);
 
         officers_side.setBackground(new java.awt.Color(2, 49, 74));
         officers_side.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -317,7 +262,7 @@ public class Home_SuperUser extends javax.swing.JFrame {
         );
 
         left_sidebar.add(officers_side);
-        officers_side.setBounds(0, 340, 250, 60);
+        officers_side.setBounds(0, 280, 250, 60);
 
         voters_side.setBackground(new java.awt.Color(2, 49, 74));
         voters_side.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -349,7 +294,7 @@ public class Home_SuperUser extends javax.swing.JFrame {
         );
 
         left_sidebar.add(voters_side);
-        voters_side.setBounds(0, 400, 250, 60);
+        voters_side.setBounds(0, 340, 250, 60);
 
         logout_side.setBackground(new java.awt.Color(2, 49, 74));
         logout_side.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -381,7 +326,7 @@ public class Home_SuperUser extends javax.swing.JFrame {
         );
 
         left_sidebar.add(logout_side);
-        logout_side.setBounds(0, 460, 250, 60);
+        logout_side.setBounds(0, 400, 250, 60);
 
         jPanel1.add(left_sidebar);
         left_sidebar.setBounds(0, 0, 250, 570);
@@ -695,38 +640,6 @@ public class Home_SuperUser extends javax.swing.JFrame {
         jPanel1.add(voters);
         voters.setBounds(250, 0, 710, 570);
 
-        dashboard.setBackground(new java.awt.Color(0, 17, 36));
-        dashboard.setCursor(new java.awt.Cursor(java.awt.Cursor.NE_RESIZE_CURSOR));
-
-        dashboard_right_label.setFont(new java.awt.Font("Raleway", 0, 24)); // NOI18N
-        dashboard_right_label.setForeground(new java.awt.Color(255, 255, 255));
-        dashboard_right_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        dashboard_right_label.setText("this is dashboard");
-
-        javax.swing.GroupLayout dashboardLayout = new javax.swing.GroupLayout(dashboard);
-        dashboard.setLayout(dashboardLayout);
-        dashboardLayout.setHorizontalGroup(
-            dashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 710, Short.MAX_VALUE)
-            .addGroup(dashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(dashboardLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(dashboard_right_label, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-        dashboardLayout.setVerticalGroup(
-            dashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 580, Short.MAX_VALUE)
-            .addGroup(dashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(dashboardLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(dashboard_right_label, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-
-        jPanel1.add(dashboard);
-        dashboard.setBounds(250, 0, 710, 580);
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -741,10 +654,6 @@ public class Home_SuperUser extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void dashboard_sideMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dashboard_sideMouseClicked
-        dashboard();
-    }//GEN-LAST:event_dashboard_sideMouseClicked
 
     private void officers_sideMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_officers_sideMouseClicked
         officers_sideBar_onclick();
@@ -916,10 +825,6 @@ public class Home_SuperUser extends javax.swing.JFrame {
     private javax.swing.JButton addOfficer;
     private javax.swing.JButton addVoter;
     private javax.swing.JScrollPane candidates_jScrollPane;
-    private javax.swing.JPanel dashboard;
-    private javax.swing.JLabel dashboard_right_label;
-    private javax.swing.JPanel dashboard_side;
-    private javax.swing.JLabel dashboard_side_label;
     private javax.swing.JButton deleteOfficer;
     private javax.swing.JButton deleteVoter;
     private javax.swing.JTextField fname;
