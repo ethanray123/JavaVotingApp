@@ -16,9 +16,14 @@ public class Voter extends User{
         super(un, fn, ln, addedby);
     }
 
+    private boolean hasVoted = false;
+    
     public void voteCandidate(String candidate, String position){
     	Vote newVote = new Vote(this.getId(), candidate, position);
-    	addToVotes(newVote);
+    	hasVoted = addToVotes(newVote);
     }
     
+    public boolean getHasVoted(){
+        return this.hasVoted;
+    }
 }

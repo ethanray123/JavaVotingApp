@@ -130,12 +130,22 @@ public class Database {
         archivedCandidates.add(c);
     }
     
-    public static void addToVotes(Vote v){
+    public static boolean addToVotes(Vote v){
         votes.add(v);
+        String candidatename = v.getCandidate();
+        String candidatepos = v.getPosition();
+        return addVoteToCandidate(candidatename, candidatepos);
     }
     
-    public static boolean checkIfVoted(){
-        return (votes.isEmpty());
+    public static boolean addVoteToCandidate(String cn, String cp){
+        for(int i=0; i < activeCandidates.size(); i++){
+            if(activeCandidates.get(i).getCandidateName().equals(cn)
+                    && activeCandidates.get(i).getPosition().equals(cp)){
+                activeCandidates.get(i).addVote();
+                return true;
+            }
+        }
+        return false;
     }
     
     public static boolean removeFromCandidates(Candidate c){
