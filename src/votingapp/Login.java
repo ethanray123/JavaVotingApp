@@ -25,13 +25,9 @@ public class Login extends javax.swing.JFrame {
         Database.addToActiveUsers(v1);
         Database.addToActiveUsers(v2);
         Database.addToActiveUsers(o);
-<<<<<<< HEAD
-        Database.addToActiveUsers(s);     
-=======
         Database.addToActiveUsers(s);
         setUsernameList();
         setPasswordList();
->>>>>>> 50351725debbeb5f9485254f16bb98de56e5d3ae
     }
     
     public void setUsernameList()
@@ -83,12 +79,9 @@ public class Login extends javax.swing.JFrame {
                         
                     //Officers
                     case "Joshua":
-<<<<<<< HEAD
                         user = "Joshua";                       
-=======
                         user = "Joshua";
                         userId = o.getId();
->>>>>>> 50351725debbeb5f9485254f16bb98de56e5d3ae
                         new Home_Officer().setVisible(true);
                         
                         this.dispose();
