@@ -47,7 +47,7 @@ public class Home_Officer extends javax.swing.JFrame {
         Database.addToActiveCandidates("Daniel Ubanan", "Vice President", "Joshua");
         Database.addToActiveCandidates("Grace Maureal", "Senator", "Joshua");
         Database.addToActiveCandidates("Joaquin Lava", "Mayor", "Joshua");
-        Database.addToActiveCandidates("Jericho Mesina",  "Vice President", "Joshua");
+        Database.addToActiveCandidates("Jericho Mesina", "Vice President", "Joshua");
         Database.addToActiveCandidates("Robert Lim", "Governor", "Joshua");
         
         CandList.addAll(Database.getCandidateList());

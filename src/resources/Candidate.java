@@ -16,15 +16,14 @@ public class Candidate {
     private Date addedOn;
     private String updatedBy;
     private Date dateUpdated;
-    
-   
+
     public Candidate(String name, String pos, String user){
         this.id = Database.assignCandidateId();
-        candidateName = name;
-        position = pos;
-        votes=0;
-        addedOn = new Date();
-        addedBy = user;
+        this.candidateName = name;
+        this.position = pos;
+        this.votes=0;
+        this.addedOn = new Date();
+        this.addedBy = user;
     }
     public String getCandidateName(){
         return this.candidateName;
