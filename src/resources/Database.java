@@ -3,7 +3,6 @@ package resources;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.Date;
 
 /**
  *
@@ -167,6 +166,9 @@ public class Database {
         }else{
             return false;
         }
+    }
+    public static ArrayList getCandidateList(){
+        return activeCandidates;
     }
     
     public static void updateCandidate(int id, String name, String position, String officer){

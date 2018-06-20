@@ -18,3 +18,5 @@ Technical Specifications:
 Technical design is up to the discretion of the group. This is to test your SAD proficiency.
 
 Due June 14 (Thu), Lab session
+
+President, Vice President, Senator, District Representative, Governor, Mayor

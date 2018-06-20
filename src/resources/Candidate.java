@@ -12,20 +12,20 @@ public class Candidate {
     private String candidateName;
     private String position;
     private int votes;
-    private String addedBy; //username
-    private Date dateAdded;
-    private String updatedBy; //username
+    private String addedBy;
+    private Date addedOn;
+    private String updatedBy;
     private Date dateUpdated;
     
-    Candidate(String name, String pos, String user){
+   
+    public Candidate(String name, String pos, String user){
         this.id = Database.assignCandidateId();
         this.candidateName = name;
         this.position = pos;
         this.votes=0;
-        this.dateAdded = new Date();
+        this.addedOn = new Date();
         this.addedBy = user;
     }
-    
     public String getCandidateName(){
         return this.candidateName;
     }
