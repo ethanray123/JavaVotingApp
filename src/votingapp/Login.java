@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import resources.Officer;
 import resources.Superuser;
 import resources.Voter;
+import resources.Database;
 
 public class Login extends javax.swing.JFrame {
     // 2 voters, 1 officer, 1 superuser
@@ -23,10 +24,14 @@ public class Login extends javax.swing.JFrame {
     }
     public void setDummyUser() 
     {
-        Voter v1 = new Voter("Ethan", "Ethan Ray", "Mosqueda", "superuser");
-        Voter v2 = new Voter("Hazel", "Hazel", "Cavite", "superuser");
-        Officer o = new Officer("Joshua", "Joshua", "Ty", "superuser");
-        Superuser s = new Superuser("Allena", "Allena", "Zamoras", "superuser");
+        Voter v1 = new Voter("Ethan", "Ethan Ray", "Mosqueda", "Allena");
+        Voter v2 = new Voter("Hazel", "Hazel", "Cavite", "Allena");
+        Officer o = new Officer("Joshua", "Joshua", "Ty", "Allena");
+        Superuser s = new Superuser("Allena", "Allena", "Zamoras", "Allena");
+        Database.addToActiveUsers(v1);
+        Database.addToActiveUsers(v2);
+        Database.addToActiveUsers(o);
+        Database.addToActiveUsers(s);
     }
     
     public void setUsernameList()
