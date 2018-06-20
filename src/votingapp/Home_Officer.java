@@ -19,6 +19,7 @@ public class Home_Officer extends javax.swing.JFrame {
         dashboard();
         initial();
         addRowToJTable();
+        username.setText(user);
     }
     public void addRowToJTable()
     {
@@ -34,20 +35,20 @@ public class Home_Officer extends javax.swing.JFrame {
         }
     }
     public void initial(){
-        Database.addToCandidates(0, "Renz Bernados",   "President",              "Joshua");    
-        Database.addToCandidates(1, "Marvin Lim",      "President",              "Joshua");
-        Database.addToCandidates(2, "Jerly Palacio",   "Senator",                "Joshua");
-        Database.addToCandidates(3, "Janel Duenas",    "District Representative","Joshua");
-        Database.addToCandidates(4, "Vince Villamora", "Mayor",                  "Joshua");
-        Database.addToCandidates(5, "Allena Zamoras",  "President",              "Joshua");
-        Database.addToCandidates(6, "Zairiel Sarausad","Vice President",         "Joshua");
-        Database.addToCandidates(7, "Joshua Isanan",   "Governor",               "Joshua");
-        Database.addToCandidates(8, "Kasey Cuyos",     "President",              "Joshua");
-        Database.addToCandidates(9, "Daniel Ubanan",   "Vice President",         "Joshua");
-        Database.addToCandidates(10,"Grace Maureal",   "Senator",                "Joshua");
-        Database.addToCandidates(11,"Joaquin Lava",    "Mayor",                  "Joshua");
-        Database.addToCandidates(12,"Jericho Mesina",  "Vice President",         "Joshua");
-        Database.addToCandidates(13,"Robert Lim",      "Governor",               "Joshua");
+        Database.addToCandidates("Renz Bernados",   "President",              "Joshua");    
+        Database.addToCandidates("Marvin Lim",      "President",              "Joshua");
+        Database.addToCandidates("Jerly Palacio",   "Senator",                "Joshua");
+        Database.addToCandidates("Janel Duenas",    "District Representative","Joshua");
+        Database.addToCandidates("Vince Villamora", "Mayor",                  "Joshua");
+        Database.addToCandidates("Allena Zamoras",  "President",              "Joshua");
+        Database.addToCandidates("Zairiel Sarausad","Vice President",         "Joshua");
+        Database.addToCandidates("Joshua Isanan",   "Governor",               "Joshua");
+        Database.addToCandidates("Kasey Cuyos",     "President",              "Joshua");
+        Database.addToCandidates("Daniel Ubanan",   "Vice President",         "Joshua");
+        Database.addToCandidates("Grace Maureal",   "Senator",                "Joshua");
+        Database.addToCandidates("Joaquin Lava",    "Mayor",                  "Joshua");
+        Database.addToCandidates("Jericho Mesina",  "Vice President",         "Joshua");
+        Database.addToCandidates("Robert Lim",      "Governor",               "Joshua");
         
         CandList.addAll(Database.getCandidateList());
         
@@ -124,6 +125,7 @@ public class Home_Officer extends javax.swing.JFrame {
         left_sidebar = new javax.swing.JPanel();
         userimg = new javax.swing.JLabel();
         user_label = new javax.swing.JLabel();
+        username = new javax.swing.JLabel();
         dashboard_side = new javax.swing.JPanel();
         dashboard_side_label = new javax.swing.JLabel();
         candidates_side = new javax.swing.JPanel();
@@ -161,14 +163,20 @@ public class Home_Officer extends javax.swing.JFrame {
 
         userimg.setIcon(new javax.swing.ImageIcon("C:\\Users\\Hazel Cavite\\Documents\\NetBeansProjects\\VotingApp\\JavaVotingApp\\img\\user.png")); // NOI18N
         left_sidebar.add(userimg);
-        userimg.setBounds(73, 56, 100, 110);
+        userimg.setBounds(70, 40, 100, 110);
 
-        user_label.setFont(new java.awt.Font("Raleway", 0, 18)); // NOI18N
+        user_label.setFont(new java.awt.Font("Raleway", 0, 24)); // NOI18N
         user_label.setForeground(new java.awt.Color(255, 255, 255));
         user_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         user_label.setText("OFFICER");
         left_sidebar.add(user_label);
-        user_label.setBounds(10, 180, 230, 40);
+        user_label.setBounds(10, 160, 230, 40);
+
+        username.setFont(new java.awt.Font("Raleway", 0, 18)); // NOI18N
+        username.setForeground(new java.awt.Color(255, 255, 255));
+        username.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        left_sidebar.add(username);
+        username.setBounds(0, 210, 250, 30);
 
         dashboard_side.setBackground(new java.awt.Color(7, 107, 143));
         dashboard_side.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -282,7 +290,7 @@ public class Home_Officer extends javax.swing.JFrame {
         statuslabel.setForeground(new java.awt.Color(0, 153, 51));
         statuslabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         searchbar_panel.add(statuslabel);
-        statuslabel.setBounds(30, 100, 640, 30);
+        statuslabel.setBounds(30, 320, 640, 50);
 
         candidatesTable.setFont(new java.awt.Font("Raleway", 0, 12)); // NOI18N
         candidatesTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -302,7 +310,7 @@ public class Home_Officer extends javax.swing.JFrame {
         candidates_jScrollPane.setViewportView(candidatesTable);
 
         searchbar_panel.add(candidates_jScrollPane);
-        candidates_jScrollPane.setBounds(30, 140, 640, 210);
+        candidates_jScrollPane.setBounds(30, 110, 640, 210);
 
         namelabel.setFont(new java.awt.Font("Raleway", 1, 14)); // NOI18N
         namelabel.setForeground(new java.awt.Color(196, 75, 77));
@@ -392,7 +400,7 @@ public class Home_Officer extends javax.swing.JFrame {
         user_label1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         user_label1.setText("TABLE LIST OF CANDIDATES");
         searchbar_panel.add(user_label1);
-        user_label1.setBounds(30, 30, 640, 100);
+        user_label1.setBounds(30, 40, 640, 50);
 
         javax.swing.GroupLayout candidatesLayout = new javax.swing.GroupLayout(candidates);
         candidates.setLayout(candidatesLayout);
@@ -503,7 +511,7 @@ public class Home_Officer extends javax.swing.JFrame {
 
             String can_votes = numvotes.getText();
             
-            Database.addToCandidates(idnum,can_name,can_pos,user);
+            Database.addToCandidates(can_name,can_pos,user);
             CandList.addAll(Database.getCandidateList());
             
             clearAddTable();
@@ -587,5 +595,6 @@ public class Home_Officer extends javax.swing.JFrame {
     private javax.swing.JLabel user_label;
     private javax.swing.JLabel user_label1;
     private javax.swing.JLabel userimg;
+    private javax.swing.JLabel username;
     // End of variables declaration//GEN-END:variables
 }

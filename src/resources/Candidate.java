@@ -18,7 +18,8 @@ public class Candidate {
     private Date dateUpdated;
     
    
-    public Candidate(int id, String name, String pos, String user){
+    public Candidate(String name, String pos, String user){
+        this.id = Database.assignCandidateId();
         candidateName = name;
         position = pos;
         votes=0;

@@ -20,7 +20,7 @@ public class Officer extends User{
         super(un, fn, ln, addedby);
     }
     public void addCandidate(int id, String name, String position){
-        addToCandidates(id, name,position,this.getUserName());
+        addToCandidates(name,position,this.getUserName());
     }
     
     public void removeCandidate(String candName){

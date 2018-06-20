@@ -2,6 +2,7 @@
 package votingapp;
 
 import java.awt.Color;
+import static votingapp.Login.user;
 
 public class Home_Voter extends javax.swing.JFrame {
     
@@ -11,12 +12,14 @@ public class Home_Voter extends javax.swing.JFrame {
     public Home_Voter() {
         initComponents();
         dashboard();
+        username.setText(user);
     }
     public void dashboard()
     {
         //set bg color when sidebar tab clicked
         dashboard_side.setBackground(new Color(7,107,143));
         candidates_side.setBackground(new Color(2,49,74));
+        logout_side.setBackground(new Color(2,49,74));
         
         // hide and show right side jPanels
         dashboard.setVisible(true);
@@ -28,10 +31,20 @@ public class Home_Voter extends javax.swing.JFrame {
         //set bg color when sidebar tab clicked
         candidates_side.setBackground(new Color(7,107,143));
         dashboard_side.setBackground(new Color(2,49,74));
+        logout_side.setBackground(new Color(2,49,74));
         
         // hide and show right side jPanels
         candidates.setVisible(true);
         dashboard.setVisible(false);
+    }
+    public void logout_sideBar_onclick()
+    {
+        logout_side.setBackground(new Color(7,107,143));
+        dashboard_side.setBackground(new Color(2,49,74));
+        candidates_side.setBackground(new Color(2,49,74));
+        
+        new Login().setVisible(true);
+        this.dispose();
     }
 
     @SuppressWarnings("unchecked")
@@ -46,6 +59,9 @@ public class Home_Voter extends javax.swing.JFrame {
         dashboard_side_label = new javax.swing.JLabel();
         candidates_side = new javax.swing.JPanel();
         candidates_side_label = new javax.swing.JLabel();
+        logout_side = new javax.swing.JPanel();
+        logout_side_label = new javax.swing.JLabel();
+        username = new javax.swing.JLabel();
         dashboard = new javax.swing.JPanel();
         dashboard_right_label = new javax.swing.JLabel();
         candidates = new javax.swing.JPanel();
@@ -63,14 +79,14 @@ public class Home_Voter extends javax.swing.JFrame {
 
         userimg.setIcon(new javax.swing.ImageIcon("C:\\Users\\Hazel Cavite\\Documents\\NetBeansProjects\\VotingApp\\JavaVotingApp\\img\\user.png")); // NOI18N
         left_sidebar.add(userimg);
-        userimg.setBounds(73, 56, 100, 110);
+        userimg.setBounds(70, 50, 100, 110);
 
-        user_label.setFont(new java.awt.Font("Raleway", 0, 18)); // NOI18N
+        user_label.setFont(new java.awt.Font("Raleway", 0, 24)); // NOI18N
         user_label.setForeground(new java.awt.Color(255, 255, 255));
         user_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         user_label.setText("VOTER");
         left_sidebar.add(user_label);
-        user_label.setBounds(10, 180, 230, 40);
+        user_label.setBounds(0, 170, 250, 40);
 
         dashboard_side.setBackground(new java.awt.Color(7, 107, 143));
         dashboard_side.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -135,6 +151,44 @@ public class Home_Voter extends javax.swing.JFrame {
 
         left_sidebar.add(candidates_side);
         candidates_side.setBounds(0, 340, 250, 60);
+
+        logout_side.setBackground(new java.awt.Color(2, 49, 74));
+        logout_side.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                logout_sideMouseClicked(evt);
+            }
+        });
+
+        logout_side_label.setFont(new java.awt.Font("Raleway", 0, 14)); // NOI18N
+        logout_side_label.setForeground(new java.awt.Color(255, 255, 255));
+        logout_side_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        logout_side_label.setText("LOGOUT");
+
+        javax.swing.GroupLayout logout_sideLayout = new javax.swing.GroupLayout(logout_side);
+        logout_side.setLayout(logout_sideLayout);
+        logout_sideLayout.setHorizontalGroup(
+            logout_sideLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(logout_sideLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(logout_side_label, javax.swing.GroupLayout.DEFAULT_SIZE, 226, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        logout_sideLayout.setVerticalGroup(
+            logout_sideLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(logout_sideLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(logout_side_label, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        left_sidebar.add(logout_side);
+        logout_side.setBounds(0, 400, 250, 60);
+
+        username.setFont(new java.awt.Font("Raleway", 0, 18)); // NOI18N
+        username.setForeground(new java.awt.Color(255, 255, 255));
+        username.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        left_sidebar.add(username);
+        username.setBounds(0, 210, 250, 30);
 
         jPanel1.add(left_sidebar);
         left_sidebar.setBounds(0, 0, 250, 620);
@@ -226,6 +280,10 @@ public class Home_Voter extends javax.swing.JFrame {
         candidates_sideBar_onclick();
     }//GEN-LAST:event_candidates_sideMouseClicked
 
+    private void logout_sideMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logout_sideMouseClicked
+        logout_sideBar_onclick();
+    }//GEN-LAST:event_logout_sideMouseClicked
+
     public static void main(String args[]) {
         
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -246,7 +304,10 @@ public class Home_Voter extends javax.swing.JFrame {
     private javax.swing.JLabel dashboard_side_label;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel left_sidebar;
+    private javax.swing.JPanel logout_side;
+    private javax.swing.JLabel logout_side_label;
     private javax.swing.JLabel user_label;
     private javax.swing.JLabel userimg;
+    private javax.swing.JLabel username;
     // End of variables declaration//GEN-END:variables
 }
