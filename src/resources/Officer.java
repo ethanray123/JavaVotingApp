@@ -6,6 +6,9 @@
 package resources;
 
 import static resources.Database.addToCandidates;
+import static resources.Database.removeFromCandidates;
+import static resources.Database.getFromActiveCandidatesWhereNameIs;
+import static resources.Database.updateCandidate;
 
 /**
  *
@@ -16,12 +19,16 @@ public class Officer extends User{
     public Officer(String un, String fn, String ln, String addedby) {
         super(un, fn, ln, addedby);
     }
-    
     public void addCandidate(int id, String name, String position){
-        addToCandidates(id,name,position,this.getUsername());
+        addToCandidates(id, name,position,this.getUserName());
     }
     
-    public void removeCandidate(int id){
-//        removeFromCandidates(id);
+    public void removeCandidate(String candName){
+    	Candidate cand = getFromActiveCandidatesWhereNameIs(candName);
+        removeFromCandidates(cand);
+    }
+
+    public static void updateCandidateInfo(int id, String name, String position, String officer){
+        updateCandidate(id,name,position,officer);
     }
 }
