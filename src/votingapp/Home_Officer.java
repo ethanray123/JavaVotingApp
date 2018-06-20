@@ -2,6 +2,7 @@
 package votingapp;
 import resources.*;
 import java.awt.Color;
+import static java.lang.Integer.parseInt;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -13,6 +14,7 @@ public class Home_Officer extends javax.swing.JFrame {
     // 7,107,143
     public static int statuscolor = 0;
     ArrayList<Candidate> CandList = new ArrayList<Candidate>();
+    public static int can_votes = 0;
     public static int idnum = 14;
     public Home_Officer() {
         initComponents();
@@ -94,7 +96,7 @@ public class Home_Officer extends javax.swing.JFrame {
         numvotes.setText(can_votes);
     }
     
-    public void clearAddTable()
+    public void clearAddTable(int flag)
     {
         DefaultTableModel model = (DefaultTableModel) candidatesTable.getModel();
         int rowCount = model.getRowCount();
@@ -104,18 +106,38 @@ public class Home_Officer extends javax.swing.JFrame {
         }
 
         Object rowData[] = new Object[3];
-        for(int i = 0; i < CandList.size(); i++){
+        if(flag == 0){
+            for(int i = 0; i < CandList.size(); i++){
+                rowData[0] = CandList.get(i).getCandidateName();
+                rowData[1] = CandList.get(i).getPosition();
+                rowData[2] = CandList.get(i).getVotes();
+
+                System.out.println(rowData[0]);
+                System.out.println(rowData[1]);
+                System.out.println(rowData[2]);
+                System.out.println("\n");
+
+                model.addRow(rowData);
+            }
+        }else if(flag == 1){
+            int i;
+            for(i = 0; i < CandList.size()-1; i++){
+                rowData[0] = CandList.get(i).getCandidateName();
+                rowData[1] = CandList.get(i).getPosition();
+                rowData[2] = CandList.get(i).getVotes();
+                model.addRow(rowData);
+            }
             rowData[0] = CandList.get(i).getCandidateName();
             rowData[1] = CandList.get(i).getPosition();
-            rowData[2] = CandList.get(i).getVotes();
-
+            rowData[2] = can_votes;
+            model.addRow(rowData);
+            
             System.out.println(rowData[0]);
             System.out.println(rowData[1]);
             System.out.println(rowData[2]);
             System.out.println("\n");
-
-            model.addRow(rowData);
         }
+        
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -509,12 +531,13 @@ public class Home_Officer extends javax.swing.JFrame {
 
             String can_pos = position.getSelectedItem().toString();
 
-            String can_votes = numvotes.getText();
+            can_votes = parseInt(numvotes.getText());
             
             Database.addToActiveCandidates(can_name,can_pos,user);
             CandList.addAll(Database.getCandidateList());
             
-            clearAddTable();
+            int flag = 1;
+            clearAddTable(flag);
             statuslabel.setForeground(new Color(0,153,51));
             statuslabel.setText("SUCESSFULLY ADDED!");
         }else{

@@ -200,18 +200,6 @@ public class Home_SuperUser extends javax.swing.JFrame {
         voters_side_label = new javax.swing.JLabel();
         logout_side = new javax.swing.JPanel();
         logout_side_label = new javax.swing.JLabel();
-        voters = new javax.swing.JPanel();
-        voters_label = new javax.swing.JLabel();
-        voters_jScrollPane = new javax.swing.JScrollPane();
-        votersTable = new javax.swing.JTable();
-        statuslabel2 = new javax.swing.JLabel();
-        fnamelabel1 = new javax.swing.JLabel();
-        fname1 = new javax.swing.JTextField();
-        lnamelabel1 = new javax.swing.JLabel();
-        lname1 = new javax.swing.JTextField();
-        addVoter = new javax.swing.JButton();
-        deleteVoter = new javax.swing.JButton();
-        updateVoter = new javax.swing.JButton();
         officers = new javax.swing.JPanel();
         user_label1 = new javax.swing.JLabel();
         candidates_jScrollPane = new javax.swing.JScrollPane();
@@ -224,6 +212,18 @@ public class Home_SuperUser extends javax.swing.JFrame {
         addOfficer = new javax.swing.JButton();
         deleteOfficer = new javax.swing.JButton();
         updateOfficer = new javax.swing.JButton();
+        voters = new javax.swing.JPanel();
+        voters_label = new javax.swing.JLabel();
+        voters_jScrollPane = new javax.swing.JScrollPane();
+        votersTable = new javax.swing.JTable();
+        statuslabel2 = new javax.swing.JLabel();
+        fnamelabel1 = new javax.swing.JLabel();
+        fname1 = new javax.swing.JTextField();
+        lnamelabel1 = new javax.swing.JLabel();
+        lname1 = new javax.swing.JTextField();
+        addVoter = new javax.swing.JButton();
+        deleteVoter = new javax.swing.JButton();
+        updateVoter = new javax.swing.JButton();
         dashboard = new javax.swing.JPanel();
         dashboard_right_label = new javax.swing.JLabel();
 
@@ -385,6 +385,158 @@ public class Home_SuperUser extends javax.swing.JFrame {
         jPanel1.add(left_sidebar);
         left_sidebar.setBounds(0, 0, 250, 570);
 
+        officers.setBackground(new java.awt.Color(0, 17, 36));
+        officers.setCursor(new java.awt.Cursor(java.awt.Cursor.NE_RESIZE_CURSOR));
+
+        user_label1.setFont(new java.awt.Font("Raleway", 0, 24)); // NOI18N
+        user_label1.setForeground(new java.awt.Color(255, 255, 255));
+        user_label1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        user_label1.setText("TABLE LIST OF OFFICERS");
+        user_label1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+
+        officersTable.setFont(new java.awt.Font("Raleway", 0, 12)); // NOI18N
+        officersTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "ID", "First Name", "Last Name"
+            }
+        ));
+        officersTable.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        officersTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                officersTableMouseClicked(evt);
+            }
+        });
+        candidates_jScrollPane.setViewportView(officersTable);
+
+        statuslabel.setFont(new java.awt.Font("Raleway", 0, 18)); // NOI18N
+        statuslabel.setForeground(new java.awt.Color(0, 153, 51));
+        statuslabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        statuslabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+
+        fnamelabel.setFont(new java.awt.Font("Raleway", 1, 14)); // NOI18N
+        fnamelabel.setForeground(new java.awt.Color(196, 75, 77));
+        fnamelabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        fnamelabel.setText("FIRST NAME");
+        fnamelabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+
+        lname.setBackground(new java.awt.Color(15, 74, 74));
+        lname.setFont(new java.awt.Font("Raleway", 0, 14)); // NOI18N
+        lname.setForeground(new java.awt.Color(255, 255, 255));
+        lname.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        lname.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 2, true));
+        lname.setOpaque(false);
+
+        lnamelabel.setFont(new java.awt.Font("Raleway", 1, 14)); // NOI18N
+        lnamelabel.setForeground(new java.awt.Color(196, 75, 77));
+        lnamelabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lnamelabel.setText("LAST NAME");
+        lnamelabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+
+        fname.setBackground(new java.awt.Color(15, 74, 74));
+        fname.setFont(new java.awt.Font("Raleway", 0, 14)); // NOI18N
+        fname.setForeground(new java.awt.Color(255, 255, 255));
+        fname.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        fname.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 2, true));
+        fname.setOpaque(false);
+
+        addOfficer.setBackground(new java.awt.Color(0, 153, 51));
+        addOfficer.setFont(new java.awt.Font("Raleway", 0, 14)); // NOI18N
+        addOfficer.setForeground(new java.awt.Color(255, 255, 255));
+        addOfficer.setText("ADD");
+        addOfficer.setBorder(null);
+        addOfficer.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                addOfficerMouseClicked(evt);
+            }
+        });
+
+        deleteOfficer.setBackground(new java.awt.Color(0, 153, 51));
+        deleteOfficer.setFont(new java.awt.Font("Raleway", 0, 14)); // NOI18N
+        deleteOfficer.setForeground(new java.awt.Color(255, 255, 255));
+        deleteOfficer.setText("DELETE");
+        deleteOfficer.setBorder(null);
+        deleteOfficer.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                deleteOfficerMouseClicked(evt);
+            }
+        });
+
+        updateOfficer.setBackground(new java.awt.Color(0, 153, 51));
+        updateOfficer.setFont(new java.awt.Font("Raleway", 0, 14)); // NOI18N
+        updateOfficer.setForeground(new java.awt.Color(255, 255, 255));
+        updateOfficer.setText("UPDATE");
+        updateOfficer.setBorder(null);
+        updateOfficer.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                updateOfficerMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout officersLayout = new javax.swing.GroupLayout(officers);
+        officers.setLayout(officersLayout);
+        officersLayout.setHorizontalGroup(
+            officersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(officersLayout.createSequentialGroup()
+                .addGroup(officersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(officersLayout.createSequentialGroup()
+                        .addGap(33, 33, 33)
+                        .addGroup(officersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(user_label1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 640, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(candidates_jScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 640, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(statuslabel, javax.swing.GroupLayout.PREFERRED_SIZE, 640, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(officersLayout.createSequentialGroup()
+                        .addGap(64, 64, 64)
+                        .addGroup(officersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(officersLayout.createSequentialGroup()
+                                .addComponent(fname, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(313, 313, 313))
+                            .addGroup(officersLayout.createSequentialGroup()
+                                .addComponent(fnamelabel, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(officersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(lnamelabel, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lname, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(officersLayout.createSequentialGroup()
+                                        .addComponent(addOfficer, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(deleteOfficer, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(updateOfficer, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
+                .addContainerGap(37, Short.MAX_VALUE))
+        );
+        officersLayout.setVerticalGroup(
+            officersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, officersLayout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addComponent(user_label1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20)
+                .addComponent(candidates_jScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(statuslabel, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(officersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(officersLayout.createSequentialGroup()
+                        .addComponent(fnamelabel, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(fname, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(officersLayout.createSequentialGroup()
+                        .addComponent(lnamelabel, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(lname, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(34, 34, 34)
+                .addGroup(officersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(addOfficer, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(deleteOfficer, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(updateOfficer, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(57, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(officers);
+        officers.setBounds(250, 0, 710, 580);
+
         voters.setBackground(new java.awt.Color(0, 17, 36));
         voters.setCursor(new java.awt.Cursor(java.awt.Cursor.NE_RESIZE_CURSOR));
 
@@ -392,6 +544,7 @@ public class Home_SuperUser extends javax.swing.JFrame {
         voters_label.setForeground(new java.awt.Color(255, 255, 255));
         voters_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         voters_label.setText("TABLE LIST OF VOTERS");
+        voters_label.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         votersTable.setFont(new java.awt.Font("Raleway", 0, 12)); // NOI18N
         votersTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -413,11 +566,13 @@ public class Home_SuperUser extends javax.swing.JFrame {
         statuslabel2.setFont(new java.awt.Font("Raleway", 0, 18)); // NOI18N
         statuslabel2.setForeground(new java.awt.Color(0, 153, 51));
         statuslabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        statuslabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         fnamelabel1.setFont(new java.awt.Font("Raleway", 1, 14)); // NOI18N
         fnamelabel1.setForeground(new java.awt.Color(196, 75, 77));
         fnamelabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         fnamelabel1.setText("FIRST NAME");
+        fnamelabel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         fname1.setBackground(new java.awt.Color(15, 74, 74));
         fname1.setFont(new java.awt.Font("Raleway", 0, 14)); // NOI18N
@@ -431,6 +586,7 @@ public class Home_SuperUser extends javax.swing.JFrame {
         lnamelabel1.setForeground(new java.awt.Color(196, 75, 77));
         lnamelabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lnamelabel1.setText("LAST NAME");
+        lnamelabel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         lname1.setBackground(new java.awt.Color(15, 74, 74));
         lname1.setFont(new java.awt.Font("Raleway", 0, 14)); // NOI18N
@@ -537,154 +693,6 @@ public class Home_SuperUser extends javax.swing.JFrame {
 
         jPanel1.add(voters);
         voters.setBounds(250, 0, 710, 570);
-
-        officers.setBackground(new java.awt.Color(0, 17, 36));
-        officers.setCursor(new java.awt.Cursor(java.awt.Cursor.NE_RESIZE_CURSOR));
-
-        user_label1.setFont(new java.awt.Font("Raleway", 0, 24)); // NOI18N
-        user_label1.setForeground(new java.awt.Color(255, 255, 255));
-        user_label1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        user_label1.setText("TABLE LIST OF OFFICERS");
-
-        officersTable.setFont(new java.awt.Font("Raleway", 0, 12)); // NOI18N
-        officersTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "ID", "First Name", "Last Name"
-            }
-        ));
-        officersTable.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        officersTable.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                officersTableMouseClicked(evt);
-            }
-        });
-        candidates_jScrollPane.setViewportView(officersTable);
-
-        statuslabel.setFont(new java.awt.Font("Raleway", 0, 18)); // NOI18N
-        statuslabel.setForeground(new java.awt.Color(0, 153, 51));
-        statuslabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-
-        fnamelabel.setFont(new java.awt.Font("Raleway", 1, 14)); // NOI18N
-        fnamelabel.setForeground(new java.awt.Color(196, 75, 77));
-        fnamelabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        fnamelabel.setText("FIRST NAME");
-
-        lname.setBackground(new java.awt.Color(15, 74, 74));
-        lname.setFont(new java.awt.Font("Raleway", 0, 14)); // NOI18N
-        lname.setForeground(new java.awt.Color(255, 255, 255));
-        lname.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        lname.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 2, true));
-        lname.setOpaque(false);
-
-        lnamelabel.setFont(new java.awt.Font("Raleway", 1, 14)); // NOI18N
-        lnamelabel.setForeground(new java.awt.Color(196, 75, 77));
-        lnamelabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lnamelabel.setText("LAST NAME");
-
-        fname.setBackground(new java.awt.Color(15, 74, 74));
-        fname.setFont(new java.awt.Font("Raleway", 0, 14)); // NOI18N
-        fname.setForeground(new java.awt.Color(255, 255, 255));
-        fname.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        fname.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 2, true));
-        fname.setOpaque(false);
-
-        addOfficer.setBackground(new java.awt.Color(0, 153, 51));
-        addOfficer.setFont(new java.awt.Font("Raleway", 0, 14)); // NOI18N
-        addOfficer.setForeground(new java.awt.Color(255, 255, 255));
-        addOfficer.setText("ADD");
-        addOfficer.setBorder(null);
-        addOfficer.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                addOfficerMouseClicked(evt);
-            }
-        });
-
-        deleteOfficer.setBackground(new java.awt.Color(0, 153, 51));
-        deleteOfficer.setFont(new java.awt.Font("Raleway", 0, 14)); // NOI18N
-        deleteOfficer.setForeground(new java.awt.Color(255, 255, 255));
-        deleteOfficer.setText("DELETE");
-        deleteOfficer.setBorder(null);
-        deleteOfficer.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                deleteOfficerMouseClicked(evt);
-            }
-        });
-
-        updateOfficer.setBackground(new java.awt.Color(0, 153, 51));
-        updateOfficer.setFont(new java.awt.Font("Raleway", 0, 14)); // NOI18N
-        updateOfficer.setForeground(new java.awt.Color(255, 255, 255));
-        updateOfficer.setText("UPDATE");
-        updateOfficer.setBorder(null);
-        updateOfficer.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                updateOfficerMouseClicked(evt);
-            }
-        });
-
-        javax.swing.GroupLayout officersLayout = new javax.swing.GroupLayout(officers);
-        officers.setLayout(officersLayout);
-        officersLayout.setHorizontalGroup(
-            officersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(officersLayout.createSequentialGroup()
-                .addGroup(officersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(officersLayout.createSequentialGroup()
-                        .addGap(33, 33, 33)
-                        .addGroup(officersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(user_label1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 640, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(candidates_jScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 640, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(statuslabel, javax.swing.GroupLayout.PREFERRED_SIZE, 640, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(officersLayout.createSequentialGroup()
-                        .addGap(64, 64, 64)
-                        .addGroup(officersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(officersLayout.createSequentialGroup()
-                                .addComponent(fname, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(313, 313, 313))
-                            .addGroup(officersLayout.createSequentialGroup()
-                                .addComponent(fnamelabel, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(officersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(lnamelabel, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lname, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(officersLayout.createSequentialGroup()
-                                        .addComponent(addOfficer, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(deleteOfficer, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(updateOfficer, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
-                .addContainerGap(37, Short.MAX_VALUE))
-        );
-        officersLayout.setVerticalGroup(
-            officersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, officersLayout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addComponent(user_label1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20)
-                .addComponent(candidates_jScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(statuslabel, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(officersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(officersLayout.createSequentialGroup()
-                        .addComponent(fnamelabel, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(10, 10, 10)
-                        .addComponent(fname, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(officersLayout.createSequentialGroup()
-                        .addComponent(lnamelabel, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(10, 10, 10)
-                        .addComponent(lname, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(34, 34, 34)
-                .addGroup(officersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(addOfficer, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(deleteOfficer, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(updateOfficer, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(57, Short.MAX_VALUE))
-        );
-
-        jPanel1.add(officers);
-        officers.setBounds(250, 0, 710, 580);
 
         dashboard.setBackground(new java.awt.Color(0, 17, 36));
         dashboard.setCursor(new java.awt.Cursor(java.awt.Cursor.NE_RESIZE_CURSOR));
