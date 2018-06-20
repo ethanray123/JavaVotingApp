@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import static votingapp.Login.user;
+import static votingapp.Login.userId;
 
 public class Home_Officer extends javax.swing.JFrame {
     // 0,17,36
