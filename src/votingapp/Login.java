@@ -66,16 +66,6 @@ public class Login extends javax.swing.JFrame {
                         new Home_Voter().setVisible(true);
                         this.dispose();
                         break;
-//                    case "Daniela":
-//                        user = "Daniela";
-//                        new Home_Voter().setVisible(true);
-//                        this.dispose();
-//                        break;
-//                    case "Maddie":
-//                        user = "Maddie";
-//                        new Home_Voter().setVisible(true);
-//                        this.dispose();
-//                        break;
                         
                     //Officers
                     case "Joshua":
@@ -85,26 +75,6 @@ public class Login extends javax.swing.JFrame {
                         
                         this.dispose();
                         break;
-//                    case "Rosslyn":
-//                        user = "Rosslyn";
-//                        new Home_Officer().setVisible(true);
-//                        this.dispose();
-//                        break;
-//                    case "Earvin":
-//                        user = "Earvin";
-//                        new Home_Officer().setVisible(true);
-//                        this.dispose();
-//                        break;
-//                    case "Terrence":
-//                        user = "Terrence";
-//                        new Home_Officer().setVisible(true);
-//                        this.dispose();
-//                        break;
-//                    case "Gian":
-//                        user = "Gian";
-//                        new Home_Officer().setVisible(true);
-//                        this.dispose();
-//                        break;
                         
                     // Superusers
                     case "Allena":
@@ -157,6 +127,7 @@ public class Login extends javax.swing.JFrame {
         statuslabel.setBounds(280, 440, 360, 40);
 
         username_icon.setIcon(new javax.swing.ImageIcon("C:\\Users\\Hazel Cavite\\Documents\\NetBeansProjects\\VotingApp\\JavaVotingApp\\img\\profile.png")); // NOI18N
+        username_icon.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jPanel1.add(username_icon);
         username_icon.setBounds(280, 280, 30, 50);
 
@@ -165,6 +136,7 @@ public class Login extends javax.swing.JFrame {
         username.setForeground(new java.awt.Color(0, 0, 0));
         username.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         username.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(67, 101, 102), 2, true));
+        username.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         username.setOpaque(false);
         username.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -175,6 +147,7 @@ public class Login extends javax.swing.JFrame {
         username.setBounds(270, 280, 360, 50);
 
         password_icon.setIcon(new javax.swing.ImageIcon("C:\\Users\\Hazel Cavite\\Documents\\NetBeansProjects\\VotingApp\\JavaVotingApp\\img\\key.png")); // NOI18N
+        password_icon.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jPanel1.add(password_icon);
         password_icon.setBounds(280, 370, 30, 50);
 
@@ -182,6 +155,7 @@ public class Login extends javax.swing.JFrame {
         password.setForeground(new java.awt.Color(0, 0, 0));
         password.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         password.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(67, 101, 102), 2, true));
+        password.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         password.setOpaque(false);
         jPanel1.add(password);
         password.setBounds(270, 370, 360, 50);
@@ -191,6 +165,7 @@ public class Login extends javax.swing.JFrame {
         login.setForeground(new java.awt.Color(255, 255, 255));
         login.setText("LOGIN");
         login.setBorder(null);
+        login.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         login.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 loginMouseClicked(evt);

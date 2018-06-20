@@ -177,6 +177,7 @@ public class Home_Officer extends javax.swing.JFrame {
         left_sidebar.setLayout(null);
 
         userimg.setIcon(new javax.swing.ImageIcon("C:\\Users\\Hazel Cavite\\Documents\\NetBeansProjects\\VotingApp\\JavaVotingApp\\img\\user.png")); // NOI18N
+        userimg.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         left_sidebar.add(userimg);
         userimg.setBounds(70, 40, 100, 110);
 
@@ -184,16 +185,19 @@ public class Home_Officer extends javax.swing.JFrame {
         user_label.setForeground(new java.awt.Color(255, 255, 255));
         user_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         user_label.setText("OFFICER");
+        user_label.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         left_sidebar.add(user_label);
         user_label.setBounds(10, 160, 230, 40);
 
         username.setFont(new java.awt.Font("Raleway", 0, 18)); // NOI18N
         username.setForeground(new java.awt.Color(255, 255, 255));
         username.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        username.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         left_sidebar.add(username);
         username.setBounds(0, 210, 250, 30);
 
         candidates_side.setBackground(new java.awt.Color(2, 49, 74));
+        candidates_side.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         candidates_side.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 candidates_sideMouseClicked(evt);
@@ -204,6 +208,7 @@ public class Home_Officer extends javax.swing.JFrame {
         candidates_side_label.setForeground(new java.awt.Color(255, 255, 255));
         candidates_side_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         candidates_side_label.setText("LIST OF CANDIDATES");
+        candidates_side_label.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         javax.swing.GroupLayout candidates_sideLayout = new javax.swing.GroupLayout(candidates_side);
         candidates_side.setLayout(candidates_sideLayout);
@@ -226,6 +231,7 @@ public class Home_Officer extends javax.swing.JFrame {
         candidates_side.setBounds(0, 290, 250, 60);
 
         logout_side.setBackground(new java.awt.Color(2, 49, 74));
+        logout_side.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         logout_side.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 logout_sideMouseClicked(evt);
@@ -236,6 +242,7 @@ public class Home_Officer extends javax.swing.JFrame {
         logout_side_label.setForeground(new java.awt.Color(255, 255, 255));
         logout_side_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         logout_side_label.setText("LOGOUT");
+        logout_side_label.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         javax.swing.GroupLayout logout_sideLayout = new javax.swing.GroupLayout(logout_side);
         logout_side.setLayout(logout_sideLayout);
@@ -272,8 +279,11 @@ public class Home_Officer extends javax.swing.JFrame {
         statuslabel.setFont(new java.awt.Font("Raleway", 0, 18)); // NOI18N
         statuslabel.setForeground(new java.awt.Color(0, 153, 51));
         statuslabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        statuslabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         searchbar_panel.add(statuslabel);
         statuslabel.setBounds(30, 320, 640, 50);
+
+        candidates_jScrollPane.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         candidatesTable.setFont(new java.awt.Font("Raleway", 0, 12)); // NOI18N
         candidatesTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -299,6 +309,7 @@ public class Home_Officer extends javax.swing.JFrame {
         namelabel.setForeground(new java.awt.Color(196, 75, 77));
         namelabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         namelabel.setText("NAME");
+        namelabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         searchbar_panel.add(namelabel);
         namelabel.setBounds(60, 390, 260, 20);
 
@@ -307,6 +318,7 @@ public class Home_Officer extends javax.swing.JFrame {
         name.setForeground(new java.awt.Color(255, 255, 255));
         name.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         name.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 2, true));
+        name.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         name.setOpaque(false);
         searchbar_panel.add(name);
         name.setBounds(60, 420, 260, 40);
@@ -315,6 +327,7 @@ public class Home_Officer extends javax.swing.JFrame {
         positionlabel.setForeground(new java.awt.Color(196, 75, 77));
         positionlabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         positionlabel.setText("POSITION");
+        positionlabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         searchbar_panel.add(positionlabel);
         positionlabel.setBounds(380, 390, 260, 20);
 
@@ -322,6 +335,7 @@ public class Home_Officer extends javax.swing.JFrame {
         numvoteslabel.setForeground(new java.awt.Color(196, 75, 77));
         numvoteslabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         numvoteslabel.setText("NO. OF VOTES");
+        numvoteslabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         searchbar_panel.add(numvoteslabel);
         numvoteslabel.setBounds(60, 470, 260, 20);
 
@@ -330,6 +344,7 @@ public class Home_Officer extends javax.swing.JFrame {
         numvotes.setForeground(new java.awt.Color(255, 255, 255));
         numvotes.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         numvotes.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 2, true));
+        numvotes.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         numvotes.setOpaque(false);
         searchbar_panel.add(numvotes);
         numvotes.setBounds(60, 500, 260, 40);
@@ -339,6 +354,7 @@ public class Home_Officer extends javax.swing.JFrame {
         add.setForeground(new java.awt.Color(255, 255, 255));
         add.setText("ADD");
         add.setBorder(null);
+        add.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         add.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 addMouseClicked(evt);
@@ -352,6 +368,7 @@ public class Home_Officer extends javax.swing.JFrame {
         update.setForeground(new java.awt.Color(255, 255, 255));
         update.setText("UPDATE");
         update.setBorder(null);
+        update.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         update.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 updateMouseClicked(evt);
@@ -365,6 +382,7 @@ public class Home_Officer extends javax.swing.JFrame {
         delete.setForeground(new java.awt.Color(255, 255, 255));
         delete.setText("DELETE");
         delete.setBorder(null);
+        delete.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         delete.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 deleteMouseClicked(evt);
@@ -375,6 +393,7 @@ public class Home_Officer extends javax.swing.JFrame {
 
         position.setFont(new java.awt.Font("Raleway", 0, 14)); // NOI18N
         position.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "President", "Vice President", "Senator", "District Representative", "Governor", "Mayor" }));
+        position.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         searchbar_panel.add(position);
         position.setBounds(380, 420, 260, 40);
 
@@ -382,6 +401,7 @@ public class Home_Officer extends javax.swing.JFrame {
         user_label1.setForeground(new java.awt.Color(255, 255, 255));
         user_label1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         user_label1.setText("TABLE LIST OF CANDIDATES");
+        user_label1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         searchbar_panel.add(user_label1);
         user_label1.setBounds(30, 40, 640, 50);
 

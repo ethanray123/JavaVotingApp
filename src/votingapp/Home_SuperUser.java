@@ -216,6 +216,7 @@ public class Home_SuperUser extends javax.swing.JFrame {
         left_sidebar.setLayout(null);
 
         userimg.setIcon(new javax.swing.ImageIcon("C:\\Users\\Hazel Cavite\\Documents\\NetBeansProjects\\VotingApp\\JavaVotingApp\\img\\user.png")); // NOI18N
+        userimg.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         left_sidebar.add(userimg);
         userimg.setBounds(70, 40, 100, 110);
 
@@ -223,16 +224,19 @@ public class Home_SuperUser extends javax.swing.JFrame {
         user_label.setForeground(new java.awt.Color(255, 255, 255));
         user_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         user_label.setText("SUPERUSER");
+        user_label.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         left_sidebar.add(user_label);
         user_label.setBounds(10, 160, 230, 40);
 
         username.setFont(new java.awt.Font("Raleway", 0, 18)); // NOI18N
         username.setForeground(new java.awt.Color(255, 255, 255));
         username.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        username.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         left_sidebar.add(username);
         username.setBounds(0, 210, 250, 30);
 
         officers_side.setBackground(new java.awt.Color(2, 49, 74));
+        officers_side.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         officers_side.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 officers_sideMouseClicked(evt);
@@ -265,6 +269,7 @@ public class Home_SuperUser extends javax.swing.JFrame {
         officers_side.setBounds(0, 280, 250, 60);
 
         voters_side.setBackground(new java.awt.Color(2, 49, 74));
+        voters_side.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         voters_side.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 voters_sideMouseClicked(evt);
@@ -297,6 +302,7 @@ public class Home_SuperUser extends javax.swing.JFrame {
         voters_side.setBounds(0, 340, 250, 60);
 
         logout_side.setBackground(new java.awt.Color(2, 49, 74));
+        logout_side.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         logout_side.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 logout_sideMouseClicked(evt);
@@ -340,6 +346,8 @@ public class Home_SuperUser extends javax.swing.JFrame {
         user_label1.setText("TABLE LIST OF OFFICERS");
         user_label1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
+        candidates_jScrollPane.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+
         officersTable.setFont(new java.awt.Font("Raleway", 0, 12)); // NOI18N
         officersTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -373,6 +381,7 @@ public class Home_SuperUser extends javax.swing.JFrame {
         lname.setForeground(new java.awt.Color(255, 255, 255));
         lname.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         lname.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 2, true));
+        lname.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         lname.setOpaque(false);
 
         lnamelabel.setFont(new java.awt.Font("Raleway", 1, 14)); // NOI18N
@@ -386,6 +395,7 @@ public class Home_SuperUser extends javax.swing.JFrame {
         fname.setForeground(new java.awt.Color(255, 255, 255));
         fname.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         fname.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 2, true));
+        fname.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         fname.setOpaque(false);
 
         addOfficer.setBackground(new java.awt.Color(0, 153, 51));
@@ -393,6 +403,7 @@ public class Home_SuperUser extends javax.swing.JFrame {
         addOfficer.setForeground(new java.awt.Color(255, 255, 255));
         addOfficer.setText("ADD");
         addOfficer.setBorder(null);
+        addOfficer.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         addOfficer.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 addOfficerMouseClicked(evt);
@@ -404,6 +415,7 @@ public class Home_SuperUser extends javax.swing.JFrame {
         deleteOfficer.setForeground(new java.awt.Color(255, 255, 255));
         deleteOfficer.setText("DELETE");
         deleteOfficer.setBorder(null);
+        deleteOfficer.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         deleteOfficer.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 deleteOfficerMouseClicked(evt);
@@ -415,6 +427,7 @@ public class Home_SuperUser extends javax.swing.JFrame {
         updateOfficer.setForeground(new java.awt.Color(255, 255, 255));
         updateOfficer.setText("UPDATE");
         updateOfficer.setBorder(null);
+        updateOfficer.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         updateOfficer.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 updateOfficerMouseClicked(evt);
@@ -501,7 +514,7 @@ public class Home_SuperUser extends javax.swing.JFrame {
                 "ID", "First Name", "Last Name"
             }
         ));
-        votersTable.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        votersTable.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         votersTable.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 votersTableMouseClicked(evt);

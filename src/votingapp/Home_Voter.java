@@ -198,6 +198,7 @@ public class Home_Voter extends javax.swing.JFrame {
         left_sidebar.setLayout(null);
 
         userimg.setIcon(new javax.swing.ImageIcon("C:\\Users\\Hazel Cavite\\Documents\\NetBeansProjects\\VotingApp\\JavaVotingApp\\img\\user.png")); // NOI18N
+        userimg.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         left_sidebar.add(userimg);
         userimg.setBounds(70, 50, 100, 110);
 
@@ -289,6 +290,8 @@ public class Home_Voter extends javax.swing.JFrame {
 
         candidates.setBackground(new java.awt.Color(0, 17, 36));
         candidates.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+
+        candidates_jScrollPane.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         votingTable.setFont(new java.awt.Font("Raleway", 0, 12)); // NOI18N
         votingTable.setModel(new javax.swing.table.DefaultTableModel(
