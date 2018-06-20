@@ -19,31 +19,32 @@ class SortById implements Comparator<User>
     }
 }
 
-//class SortByYearPublished implements Comparator<User>
-//{
-//    // Used for sorting in ascending order of
-//    // roll number
-//    @Override
-//    public int compare(User a, User b)
-//    {
-//        return a.getYearPublished() - b.getYearPublished();
-//    }
-//}
+class SortByDateUpdated implements Comparator<User>
+{
+   // Used for sorting in ascending order of
+   // roll number
+   @Override
+   public int compare(User a, User b)
+   {
+       return a.getDateUpdated().compareTo(b.getDateUpdated());
+   }
+}
 
-//class SortByDateAdded implements Comparator<User>
-//{
-//    // Used for sorting in ascending order of
-//    // roll number
-//    @Override
-//    public int compare(User a, User b)
-//    {
-//        return a.getDateAdded().compareTo(b.getDateAdded());
-//    }
-//}
+class SortByDateAdded implements Comparator<User>
+{
+   // Used for sorting in ascending order of
+   // roll number
+   @Override
+   public int compare(User a, User b)
+   {
+       return a.getDateAdded().compareTo(b.getDateAdded());
+   }
+}
 
 public class Database {
     private static int userid = 0;
     private static int candidateid = 0;
+    private static int voteid = 0;
     private static ArrayList<User> activeUsers = new ArrayList<User>();
     private static ArrayList<User> archivedUsers = new ArrayList<User>();
     private static ArrayList<Vote> votes = new ArrayList<Vote>();
@@ -72,6 +73,20 @@ public class Database {
         }
     }
     
+    public static boolean isInArchivedUsersWhereIdIs(int id){
+        int i=0;
+        for(; i < archivedUsers.size(); i++){
+            if(archivedUsers.get(i).getId() == id){
+                break;
+            }
+        }
+        if(i != archivedUsers.size()){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
     public static boolean isInArchivedUsers(User user){
         if(archivedUsers.contains(user)){
             return true;
@@ -80,8 +95,16 @@ public class Database {
         }
     }
     
-    public static int assignId(){
+    public static int assignUserId(){
         return userid++;
+    }
+
+    public static int assignCandidateId(){
+        return candidateid++;
+    }
+
+    public static int assignVoteId(){
+        return voteid++;
     }
     
     public static void addToActiveUsers(User User){
@@ -106,17 +129,16 @@ public class Database {
         votes.add(v);
     }
     
-    public static void updateCandidate(int id, String name, String position, String officer){
-        activeCandidates.get(id).setCandidateName(name, officer);
-        activeCandidates.get(id).setPosition(position, officer);
-    }
-    
     public static boolean checkIfVoted(){
         return (votes.isEmpty());
     }
     
     public static boolean removeFromCandidates(Candidate c){
         return activeCandidates.remove(c);
+    }
+
+    public static boolean removeFromUsers(User u){
+        return activeUsers.remove(u);
     }
     
     public static boolean removeFromActiveUsersWhereIdIs(int id){
@@ -138,7 +160,21 @@ public class Database {
     public static ArrayList getCandidateList(){
         return activeCandidates;
     }
-    public static Candidate getFromCandidatesWhereNameIs(String name){
+    
+    public static void updateCandidate(int id, String name, String position, String officer){
+        activeCandidates.get(id).setCandidateName(name, officer);
+        activeCandidates.get(id).setPosition(position, officer);
+    }
+    
+    public static void updateUser(int id, String fn, String ln, String un, String updatedby){
+        activeUsers.get(id).setFirstName(fn);
+        activeUsers.get(id).setLastName(ln);
+        activeUsers.get(id).setUserName(un);
+        activeUsers.get(id).setDateUpdated();
+        activeUsers.get(id).setUpdatedBy(updatedby);
+    }
+    
+    public static Candidate getFromActiveCandidatesWhereNameIs(String name){
         int i=0;
         for(; i < activeCandidates.size(); i++){
             if(activeCandidates.get(i).getCandidateName().equals(name)){
@@ -147,6 +183,20 @@ public class Database {
         }
         if(i != activeCandidates.size()){
             return activeCandidates.get(i);
+        }else{
+            return null;
+        }
+    }
+
+    public static Candidate getFromArchivedCandidatesWhereNameIs(String name){
+        int i=0;
+        for(; i < archivedCandidates.size(); i++){
+            if(archivedCandidates.get(i).getCandidateName().equals(name)){
+                break;
+            }
+        }
+        if(i != archivedCandidates.size()){
+            return archivedCandidates.get(i);
         }else{
             return null;
         }

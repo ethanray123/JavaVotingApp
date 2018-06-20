@@ -5,17 +5,17 @@ import java.util.Date;
 
 /**
  *
- * @author Ethan
+ * @author Ethan Mosqueda
  */
 public class Candidate {
+    private int id;
     private String candidateName;
     private String position;
     private int votes;
     private String addedBy;
     private Date addedOn;
     private String updatedBy;
-    private Date updatedOn;
-    private int id;
+    private Date dateUpdated;
     
    
     public Candidate(int id, String name, String pos, String user){
@@ -25,9 +25,6 @@ public class Candidate {
         addedOn = new Date();
         addedBy = user;
     }
-   
-   
-    
     public String getCandidateName(){
         return this.candidateName;
     }
@@ -43,13 +40,13 @@ public class Candidate {
     public void setCandidateName(String name, String user){
         this.candidateName = name;
         this.updatedBy = user;
-        this.updatedOn = new Date();
+        this.dateUpdated = new Date();
     }
     
     public void setPosition(String pos, String user){
         this.position = pos;
         this.updatedBy = user;
-        this.updatedOn = new Date();
+        this.dateUpdated = new Date();
     }
     
     public void addVote(){

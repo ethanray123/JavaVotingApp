@@ -11,6 +11,7 @@ public class Login extends javax.swing.JFrame {
     // 2 voters, 1 officer, 1 superuser
     public static ArrayList<String> passwordList = new ArrayList<>();
     public static ArrayList<String> usernameList = new ArrayList<>();
+    public static String user;
     public Login() {
         initComponents();
         username.setBackground(new Color(0, 0, 0, 64));
@@ -22,10 +23,10 @@ public class Login extends javax.swing.JFrame {
     }
     public void setDummyUser() 
     {
-        Voter v1 = new Voter("Ethan", "Ethan", "Mosqueda", "JTy");
-        Voter v2 = new Voter("Hazel", "Hazel", "Cavite", "Joshua Ty");
-        Officer o = new Officer("Joshua", "Joshua", "Ty", "Allena Zamoras");
-        Superuser s = new Superuser("Allena", "Allena", "Zamoras", "Zairiel Sarausad");
+        Voter v1 = new Voter("Ethan", "Ethan Ray", "Mosqueda", "superuser");
+        Voter v2 = new Voter("Hazel", "Hazel", "Cavite", "superuser");
+        Officer o = new Officer("Joshua", "Joshua", "Ty", "superuser");
+        Superuser s = new Superuser("Allena", "Allena", "Zamoras", "superuser");
     }
     
     public void setUsernameList()
@@ -52,18 +53,22 @@ public class Login extends javax.swing.JFrame {
             if(passwordList.contains(inputPassword) && inputUsername.equals(inputPassword)){
                 switch(inputUsername){
                     case "Ethan":
+                        user = "Ethan";
                         new Home_Voter().setVisible(true);
                         this.dispose();
                         break;
                     case "Hazel":
+                        user = "Hazel";
                         new Home_Voter().setVisible(true);
                         this.dispose();
                         break;
                     case "Joshua":
+                        user = "Joshua";
                         new Home_Officer().setVisible(true);
                         this.dispose();
                         break;
                     case "Allena":
+                        user = "Allena";
                         new Home_SuperUser().setVisible(true);
                         this.dispose();
                         break;

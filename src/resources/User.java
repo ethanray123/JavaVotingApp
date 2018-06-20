@@ -3,67 +3,89 @@ package resources;
 import java.util.Date;
 
 public class User {
-    private String FirstName;
-    private String LastName;
-    private int Id;
-    private String AddedBy;
-    private String UpdatedBy;
-    private Date DateAdded;
-    private Date DateUpdated;
-    private String UserName;
+    private int id;
+    private String userName;
+    private String firstName;
+    private String lastName;
+    private String addedBy; //username
+    private Date dateAdded;
+    private String updatedBy; //username
+    private Date dateUpdated;
     
     public User(String un, String fn, String ln, String addedby){
-       this.FirstName = fn;
-       this.LastName = ln;
-       this.DateAdded = new Date();
-       this.AddedBy= addedby;
-       this.UserName = un;
-       Database.assignId();            
+       this.id = Database.assignUserId(); 
+       this.firstName = fn;
+       this.lastName = ln;
+       this.dateAdded = new Date();
+       this.addedBy= addedby;
+       this.userName = un;           
     }
     
+
+    //GETTERS
+
     public int getId(){
-        return this.Id;
+        return this.id;
     }
-    public void setFirstname(String fn){
-        this.FirstName = fn;  
+
+    public String getFirstName(){
+        return this.firstName;
     }
-    public String getFirstname(){
-        return this.FirstName;
+
+    public String getLastName(){
+        return this.lastName;
     }
-    public void setLastname(String ln){
-        this.LastName = ln;
+
+    public String getUserName(){
+        return this.userName;
     }
-    public String getLastname(){
-        return this.LastName;
+
+    public String getAddedBy(){
+        return this.addedBy;
     }
-    public void setUsername(String un){
-        this.UserName = un;
+
+    public Date getDateAdded(){
+        return this.dateAdded;
     }
-    public String getUsername(){
-        return this.UserName;
+
+    public String getUpdatedBy(){
+        return this.updatedBy;      
     }
-    public void setAddedby(String ab){
-         this.AddedBy = ab;   
+    
+    public Date getDateUpdated(){
+        return this.dateUpdated;
     }
-    public String getAddedby(){
-        return this.AddedBy;
+    //--------------------------
+
+    //SETTERS
+
+    public void setFirstName(String fn){
+        this.firstName = fn;  
     }
-    public void setUpdatedby(String ub){
-        this.UpdatedBy = ub;
+
+    public void setLastName(String ln){
+        this.lastName = ln;
     }
-    public String getUpdatedby(){
-        return this.UpdatedBy;      
+
+    public void setUserName(String un){
+        this.userName = un;
     }
-    public void setDateadded(){
-        this.DateAdded = new Date();        
+
+    public void setAddedBy(String ab){
+         this.addedBy = ab;   
     }
-    public Date getDateadded(){
-        return this.DateAdded;
+
+    public void setDateAdded(){
+        this.dateAdded = new Date();        
     }
-    public void setUpdateadded(){
-        this.DateUpdated = new Date();
+
+    public void setUpdatedBy(String ub){
+        this.updatedBy = ub;
     }
-    public Date getDateupdated(){
-        return this.DateUpdated;
+
+    public void setDateUpdated(){
+        this.dateUpdated = new Date();
     }
+
+    //----------------------------------
 }
