@@ -200,18 +200,6 @@ public class Home_SuperUser extends javax.swing.JFrame {
         voters_side_label = new javax.swing.JLabel();
         logout_side = new javax.swing.JPanel();
         logout_side_label = new javax.swing.JLabel();
-        officers = new javax.swing.JPanel();
-        user_label1 = new javax.swing.JLabel();
-        candidates_jScrollPane = new javax.swing.JScrollPane();
-        officersTable = new javax.swing.JTable();
-        statuslabel = new javax.swing.JLabel();
-        fnamelabel = new javax.swing.JLabel();
-        lname = new javax.swing.JTextField();
-        lnamelabel = new javax.swing.JLabel();
-        fname = new javax.swing.JTextField();
-        addOfficer = new javax.swing.JButton();
-        deleteOfficer = new javax.swing.JButton();
-        updateOfficer = new javax.swing.JButton();
         voters = new javax.swing.JPanel();
         voters_label = new javax.swing.JLabel();
         voters_jScrollPane = new javax.swing.JScrollPane();
@@ -224,6 +212,18 @@ public class Home_SuperUser extends javax.swing.JFrame {
         addVoter = new javax.swing.JButton();
         deleteVoter = new javax.swing.JButton();
         updateVoter = new javax.swing.JButton();
+        officers = new javax.swing.JPanel();
+        user_label1 = new javax.swing.JLabel();
+        candidates_jScrollPane = new javax.swing.JScrollPane();
+        officersTable = new javax.swing.JTable();
+        statuslabel = new javax.swing.JLabel();
+        fnamelabel = new javax.swing.JLabel();
+        lname = new javax.swing.JTextField();
+        lnamelabel = new javax.swing.JLabel();
+        fname = new javax.swing.JTextField();
+        addOfficer = new javax.swing.JButton();
+        deleteOfficer = new javax.swing.JButton();
+        updateOfficer = new javax.swing.JButton();
         dashboard = new javax.swing.JPanel();
         dashboard_right_label = new javax.swing.JLabel();
 
@@ -385,6 +385,159 @@ public class Home_SuperUser extends javax.swing.JFrame {
         jPanel1.add(left_sidebar);
         left_sidebar.setBounds(0, 0, 250, 570);
 
+        voters.setBackground(new java.awt.Color(0, 17, 36));
+        voters.setCursor(new java.awt.Cursor(java.awt.Cursor.NE_RESIZE_CURSOR));
+
+        voters_label.setFont(new java.awt.Font("Raleway", 0, 24)); // NOI18N
+        voters_label.setForeground(new java.awt.Color(255, 255, 255));
+        voters_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        voters_label.setText("TABLE LIST OF VOTERS");
+
+        votersTable.setFont(new java.awt.Font("Raleway", 0, 12)); // NOI18N
+        votersTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "ID", "First Name", "Last Name"
+            }
+        ));
+        votersTable.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        votersTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                votersTableMouseClicked(evt);
+            }
+        });
+        voters_jScrollPane.setViewportView(votersTable);
+
+        statuslabel2.setFont(new java.awt.Font("Raleway", 0, 18)); // NOI18N
+        statuslabel2.setForeground(new java.awt.Color(0, 153, 51));
+        statuslabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        fnamelabel1.setFont(new java.awt.Font("Raleway", 1, 14)); // NOI18N
+        fnamelabel1.setForeground(new java.awt.Color(196, 75, 77));
+        fnamelabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        fnamelabel1.setText("FIRST NAME");
+
+        fname1.setBackground(new java.awt.Color(15, 74, 74));
+        fname1.setFont(new java.awt.Font("Raleway", 0, 14)); // NOI18N
+        fname1.setForeground(new java.awt.Color(255, 255, 255));
+        fname1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        fname1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 2, true));
+        fname1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        fname1.setOpaque(false);
+
+        lnamelabel1.setFont(new java.awt.Font("Raleway", 1, 14)); // NOI18N
+        lnamelabel1.setForeground(new java.awt.Color(196, 75, 77));
+        lnamelabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lnamelabel1.setText("LAST NAME");
+
+        lname1.setBackground(new java.awt.Color(15, 74, 74));
+        lname1.setFont(new java.awt.Font("Raleway", 0, 14)); // NOI18N
+        lname1.setForeground(new java.awt.Color(255, 255, 255));
+        lname1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        lname1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 2, true));
+        lname1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        lname1.setOpaque(false);
+
+        addVoter.setBackground(new java.awt.Color(0, 153, 51));
+        addVoter.setFont(new java.awt.Font("Raleway", 0, 14)); // NOI18N
+        addVoter.setForeground(new java.awt.Color(255, 255, 255));
+        addVoter.setText("ADD");
+        addVoter.setBorder(null);
+        addVoter.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        addVoter.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                addVoterMouseClicked(evt);
+            }
+        });
+
+        deleteVoter.setBackground(new java.awt.Color(0, 153, 51));
+        deleteVoter.setFont(new java.awt.Font("Raleway", 0, 14)); // NOI18N
+        deleteVoter.setForeground(new java.awt.Color(255, 255, 255));
+        deleteVoter.setText("DELETE");
+        deleteVoter.setBorder(null);
+        deleteVoter.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        deleteVoter.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                deleteVoterMouseClicked(evt);
+            }
+        });
+
+        updateVoter.setBackground(new java.awt.Color(0, 153, 51));
+        updateVoter.setFont(new java.awt.Font("Raleway", 0, 14)); // NOI18N
+        updateVoter.setForeground(new java.awt.Color(255, 255, 255));
+        updateVoter.setText("UPDATE");
+        updateVoter.setBorder(null);
+        updateVoter.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        updateVoter.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                updateVoterMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout votersLayout = new javax.swing.GroupLayout(voters);
+        voters.setLayout(votersLayout);
+        votersLayout.setHorizontalGroup(
+            votersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(votersLayout.createSequentialGroup()
+                .addGroup(votersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(votersLayout.createSequentialGroup()
+                        .addGap(33, 33, 33)
+                        .addGroup(votersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(voters_label, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 640, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(voters_jScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 640, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(statuslabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 640, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(votersLayout.createSequentialGroup()
+                        .addGap(67, 67, 67)
+                        .addGroup(votersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(votersLayout.createSequentialGroup()
+                                .addComponent(fname1, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(313, 313, 313))
+                            .addGroup(votersLayout.createSequentialGroup()
+                                .addComponent(fnamelabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(votersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(lnamelabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lname1, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(votersLayout.createSequentialGroup()
+                                        .addComponent(addVoter, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(deleteVoter, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(updateVoter, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
+                .addContainerGap(37, Short.MAX_VALUE))
+        );
+        votersLayout.setVerticalGroup(
+            votersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, votersLayout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addComponent(voters_label, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20)
+                .addComponent(voters_jScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(statuslabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(votersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(votersLayout.createSequentialGroup()
+                        .addComponent(fnamelabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(fname1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(votersLayout.createSequentialGroup()
+                        .addComponent(lnamelabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(lname1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(29, 29, 29)
+                .addGroup(votersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(addVoter, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(deleteVoter, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(updateVoter, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(52, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(voters);
+        voters.setBounds(250, 0, 710, 570);
+
         officers.setBackground(new java.awt.Color(0, 17, 36));
         officers.setCursor(new java.awt.Cursor(java.awt.Cursor.NE_RESIZE_CURSOR));
 
@@ -522,169 +675,16 @@ public class Home_SuperUser extends javax.swing.JFrame {
                         .addComponent(lnamelabel, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(10, 10, 10)
                         .addComponent(lname, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(41, 41, 41)
+                .addGap(34, 34, 34)
                 .addGroup(officersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(addOfficer, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(deleteOfficer, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(updateOfficer, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(50, Short.MAX_VALUE))
+                .addContainerGap(57, Short.MAX_VALUE))
         );
 
         jPanel1.add(officers);
         officers.setBounds(250, 0, 710, 580);
-
-        voters.setBackground(new java.awt.Color(0, 17, 36));
-        voters.setCursor(new java.awt.Cursor(java.awt.Cursor.NE_RESIZE_CURSOR));
-
-        voters_label.setFont(new java.awt.Font("Raleway", 0, 24)); // NOI18N
-        voters_label.setForeground(new java.awt.Color(255, 255, 255));
-        voters_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        voters_label.setText("TABLE LIST OF VOTERS");
-
-        votersTable.setFont(new java.awt.Font("Raleway", 0, 12)); // NOI18N
-        votersTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "ID", "First Name", "Last Name"
-            }
-        ));
-        votersTable.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        votersTable.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                votersTableMouseClicked(evt);
-            }
-        });
-        voters_jScrollPane.setViewportView(votersTable);
-
-        statuslabel2.setFont(new java.awt.Font("Raleway", 0, 18)); // NOI18N
-        statuslabel2.setForeground(new java.awt.Color(0, 153, 51));
-        statuslabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-
-        fnamelabel1.setFont(new java.awt.Font("Raleway", 1, 14)); // NOI18N
-        fnamelabel1.setForeground(new java.awt.Color(196, 75, 77));
-        fnamelabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        fnamelabel1.setText("FIRST NAME");
-
-        fname1.setBackground(new java.awt.Color(15, 74, 74));
-        fname1.setFont(new java.awt.Font("Raleway", 0, 14)); // NOI18N
-        fname1.setForeground(new java.awt.Color(255, 255, 255));
-        fname1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        fname1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 2, true));
-        fname1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        fname1.setOpaque(false);
-
-        lnamelabel1.setFont(new java.awt.Font("Raleway", 1, 14)); // NOI18N
-        lnamelabel1.setForeground(new java.awt.Color(196, 75, 77));
-        lnamelabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lnamelabel1.setText("LAST NAME");
-
-        lname1.setBackground(new java.awt.Color(15, 74, 74));
-        lname1.setFont(new java.awt.Font("Raleway", 0, 14)); // NOI18N
-        lname1.setForeground(new java.awt.Color(255, 255, 255));
-        lname1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        lname1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 2, true));
-        lname1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        lname1.setOpaque(false);
-
-        addVoter.setBackground(new java.awt.Color(0, 153, 51));
-        addVoter.setFont(new java.awt.Font("Raleway", 0, 14)); // NOI18N
-        addVoter.setForeground(new java.awt.Color(255, 255, 255));
-        addVoter.setText("ADD");
-        addVoter.setBorder(null);
-        addVoter.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        addVoter.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                addVoterMouseClicked(evt);
-            }
-        });
-
-        deleteVoter.setBackground(new java.awt.Color(0, 153, 51));
-        deleteVoter.setFont(new java.awt.Font("Raleway", 0, 14)); // NOI18N
-        deleteVoter.setForeground(new java.awt.Color(255, 255, 255));
-        deleteVoter.setText("DELETE");
-        deleteVoter.setBorder(null);
-        deleteVoter.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        deleteVoter.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                deleteVoterMouseClicked(evt);
-            }
-        });
-
-        updateVoter.setBackground(new java.awt.Color(0, 153, 51));
-        updateVoter.setFont(new java.awt.Font("Raleway", 0, 14)); // NOI18N
-        updateVoter.setForeground(new java.awt.Color(255, 255, 255));
-        updateVoter.setText("UPDATE");
-        updateVoter.setBorder(null);
-        updateVoter.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        updateVoter.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                updateVoterMouseClicked(evt);
-            }
-        });
-
-        javax.swing.GroupLayout votersLayout = new javax.swing.GroupLayout(voters);
-        voters.setLayout(votersLayout);
-        votersLayout.setHorizontalGroup(
-            votersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(votersLayout.createSequentialGroup()
-                .addGroup(votersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(votersLayout.createSequentialGroup()
-                        .addGap(33, 33, 33)
-                        .addGroup(votersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(voters_label, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 640, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(voters_jScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 640, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(statuslabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 640, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(votersLayout.createSequentialGroup()
-                        .addGap(61, 61, 61)
-                        .addGroup(votersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(votersLayout.createSequentialGroup()
-                                .addComponent(fname1, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(313, 313, 313))
-                            .addGroup(votersLayout.createSequentialGroup()
-                                .addComponent(fnamelabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(votersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(lnamelabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lname1, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(votersLayout.createSequentialGroup()
-                                        .addComponent(addVoter, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(deleteVoter, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(updateVoter, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
-                .addContainerGap(37, Short.MAX_VALUE))
-        );
-        votersLayout.setVerticalGroup(
-            votersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, votersLayout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addComponent(voters_label, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20)
-                .addComponent(voters_jScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(statuslabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
-                .addGroup(votersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(votersLayout.createSequentialGroup()
-                        .addComponent(fnamelabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(10, 10, 10)
-                        .addComponent(fname1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(votersLayout.createSequentialGroup()
-                        .addComponent(lnamelabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(10, 10, 10)
-                        .addComponent(lname1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(41, 41, 41)
-                .addGroup(votersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(addVoter, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(deleteVoter, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(updateVoter, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(29, Short.MAX_VALUE))
-        );
-
-        jPanel1.add(voters);
-        voters.setBounds(250, 0, 710, 570);
 
         dashboard.setBackground(new java.awt.Color(0, 17, 36));
         dashboard.setCursor(new java.awt.Cursor(java.awt.Cursor.NE_RESIZE_CURSOR));
