@@ -20,19 +20,20 @@ public class Home_Officer extends javax.swing.JFrame {
     }
     
     public void initial(){
-        Database.addToCandidates(0, "Renz Bernados", "President", "Joshua");    
-        Database.addToCandidates(1,"Marvin Lim","President","Joshua");
-        Database.addToCandidates(2,"Jerly Palacio","Senator","Joshua");
-        Database.addToCandidates(3,"Janel Duenas","District Representative","Joshua");
-        Database.addToCandidates(4,"Vince Villamora","Mayor","Joshua");
-        Database.addToCandidates(5,"Allena Zamoras","President","Joshua");
-        Database.addToCandidates(6,"Zairiel Sarausad","Vice President","Joshua");
-        Database.addToCandidates(7,"Joshua Isanan","Governor","Joshua");
-        Database.addToCandidates(8,"Kasey Cuyos","President","Joshua");
-        Database.addToCandidates(9,"Daniel Ubanan","Vice President","Joshua");
-        Database.addToCandidates(10,"Grace Maureal","Senator","Joshua");
-        Database.addToCandidates(11,"Joaquin Lava","Mayor","Joshua");
-        Database.addToCandidates(12,"Jericho Mesina","Vice President","Joshua");
+        Database.addToActiveCandidates("Renz Bernados", "President", "Joshua");    
+        Database.addToActiveCandidates("Marvin Lim", "President", "Joshua");
+        Database.addToActiveCandidates("Jerly Palacio", "Senator", "Joshua");
+        Database.addToActiveCandidates("Janel Duenas", "District Representative", "Joshua");
+        Database.addToActiveCandidates("Vince Villamora", "Mayor", "Joshua");
+        Database.addToActiveCandidates("Allena Zamoras", "President", "Joshua");
+        Database.addToActiveCandidates("Zairiel Sarausad","Vice President", "Joshua");
+        Database.addToActiveCandidates("Joshua Isanan", "Governor", "Joshua");
+        Database.addToActiveCandidates("Kasey Cuyos", "President", "Joshua");
+        Database.addToActiveCandidates("Daniel Ubanan", "Vice President", "Joshua");
+        Database.addToActiveCandidates("Grace Maureal", "Senator", "Joshua");
+        Database.addToActiveCandidates("Joaquin Lava", "Mayor", "Joshua");
+        Database.addToActiveCandidates("Jericho Mesina",  "Vice President", "Joshua");
+        Database.addToActiveCandidates("Robert Lim", "Governor", "Joshua");
         
         CandList.addAll(Database.getCandidateList());
         
