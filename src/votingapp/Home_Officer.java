@@ -506,17 +506,24 @@ public class Home_Officer extends javax.swing.JFrame {
             "Are you sure you want to update candidate?","Warning", dialogButton);
 
         if (dialogResult == JOptionPane.YES_OPTION) {
-            if(!name.getText().isEmpty() && !numvotes.getText().isEmpty() 
+            if(Database.hasNotVoted() == true){
+                if(!name.getText().isEmpty() && !numvotes.getText().isEmpty() 
                 && numvotes.getText().matches("[0-9]+")){
                     model.setValueAt(name.getText(), selectedRowIndex, 0);
                     model.setValueAt(position.getSelectedItem(), selectedRowIndex, 1);
                     model.setValueAt(numvotes.getText(), selectedRowIndex, 2);
                     statuslabel.setForeground(new Color(0,153,51));
                     statuslabel.setText("SUCESSFULLY UPDATED!");
-            }else{
+                    
+                    System.out.println(CandList.get(CandList.size()-1).getCandidateName());
+                }else{
                 statuslabel.setForeground(new Color(196,75,77));
                 statuslabel.setText("THERE IS AN ERROR IN YOUR INPUT!");
+                }
+            }else{
+                statuslabel.setText("A VOTE HAS BEEN CASTED. YOU CAN NO LONGER MODIFY THE ROSTER!");
             }
+            
         }else{
             statuslabel.setForeground(new Color(196,75,77));
             statuslabel.setText("YOU HAVE CANCELLED UPDATE!");
@@ -524,25 +531,30 @@ public class Home_Officer extends javax.swing.JFrame {
     }//GEN-LAST:event_updateMouseClicked
 
     private void addMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addMouseClicked
-        if(!name.getText().isEmpty() && !position.getSelectedItem().toString().isEmpty()
-            && !numvotes.getText().isEmpty() && numvotes.getText().matches("[0-9]+")){
+        if(Database.hasNotVoted() == true){      
+            if(!name.getText().isEmpty() && !position.getSelectedItem().toString().isEmpty()
+                && !numvotes.getText().isEmpty() && numvotes.getText().matches("[0-9]+")){
 
-            String can_name = name.getText();
+                String can_name = name.getText();
 
-            String can_pos = position.getSelectedItem().toString();
 
-            can_votes = parseInt(numvotes.getText());
-            
-            Database.addToActiveCandidates(can_name,can_pos,user);
-            CandList.addAll(Database.getCandidateList());
-            
-            int flag = 1;
-            clearAddTable(flag);
-            statuslabel.setForeground(new Color(0,153,51));
-            statuslabel.setText("SUCESSFULLY ADDED!");
+                String can_pos = position.getSelectedItem().toString();
+
+                can_votes = parseInt(numvotes.getText());
+                
+                //Database.addToActiveCandidates(can_name,can_pos,user);
+                CandList.addAll(Database.getCandidateList());
+                System.out.println(CandList.get(CandList.size()-1).getCandidateName());
+                int flag = 1;
+                clearAddTable(flag);
+                statuslabel.setForeground(new Color(0,153,51));
+                statuslabel.setText("SUCESSFULLY ADDED!");
+            }else{
+                statuslabel.setForeground(new Color(196,75,77));
+                statuslabel.setText("THERE IS AN ERROR IN YOUR INPUT!");
+            }
         }else{
-            statuslabel.setForeground(new Color(196,75,77));
-            statuslabel.setText("THERE IS AN ERROR IN YOUR INPUT!");
+                statuslabel.setText("A VOTE HAS BEEN CASTED. YOU CAN NO LONGER MODIFY THE ROSTER!");
         }
     }//GEN-LAST:event_addMouseClicked
 
@@ -566,15 +578,21 @@ public class Home_Officer extends javax.swing.JFrame {
             "Are you sure you want to remove candidate?","Warning", dialogButton);
 
         if (dialogResult == JOptionPane.YES_OPTION) {
-            DefaultTableModel model = (DefaultTableModel) candidatesTable.getModel();
-            int SelectedRowIndex = candidatesTable.getSelectedRow();
-            model.removeRow(SelectedRowIndex);
-            statuslabel.setForeground(new Color(0,153,51));
-            statuslabel.setText("SUCESSFULLY DELETED!");
-        }else{
-            statuslabel.setForeground(new Color(196,75,77));
-            statuslabel.setText("YOU HAVE CANCELLED DELETION!");
-        }
+            if(Database.hasNotVoted() == true){
+                DefaultTableModel model = (DefaultTableModel) candidatesTable.getModel();
+                int SelectedRowIndex = candidatesTable.getSelectedRow();
+                model.removeRow(SelectedRowIndex);
+                statuslabel.setForeground(new Color(0,153,51));
+                statuslabel.setText("SUCESSFULLY DELETED!");           
+               // Database.addToArchivedCandidates(c);
+                }else{
+                statuslabel.setForeground(new Color(196,75,77));
+                statuslabel.setText("YOU HAVE CANCELLED DELETION!");
+                }
+            }else{
+                statuslabel.setText("A VOTE HAS BEEN CASTED. YOU CAN NO LONGER MODIFY THE ROSTER!");
+            }
+           
     }//GEN-LAST:event_deleteMouseClicked
 
     private void logout_sideMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logout_sideMouseClicked

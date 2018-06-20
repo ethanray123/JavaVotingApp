@@ -21,31 +21,22 @@ public class Officer extends User{
         super(un, fn, ln, addedby);
     }
     
-    public boolean addCandidate(String name, String position){
-        if(hasNotVoted()){
-            addToActiveCandidates(name,position,this.getUserName());
-        }else{
-            return false;
-        }
-        return true;
+    public void addCandidate(String name, String position){
+        
+        addToActiveCandidates(name,position,this.getUserName());
+        
     }
     
-    public boolean removeCandidate(String candName){
-        if(hasNotVoted()){
-            Candidate cand = getFromActiveCandidatesWhereNameIs(candName);
-            removeFromCandidates(cand);
-        }else{
-            return false;
-        }
-        return true;
+    public void removeCandidate(String candName){
+        
+        Candidate cand = getFromActiveCandidatesWhereNameIs(candName);
+        removeFromCandidates(cand);
+
     }
 
-    public boolean updateCandidateInfo(int id, String name, String position, String officer){
-        if(hasNotVoted()){
-            updateCandidate(id,name,position,officer);
-        }else{
-            return false;
-        }
-        return true;
+    public void updateCandidateInfo(int id, String name, String position, String officer){
+        
+        updateCandidate(id,name,position,officer);
+        
     }
 }

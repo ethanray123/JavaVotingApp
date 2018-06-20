@@ -31,7 +31,7 @@ public class Login extends javax.swing.JFrame {
         Database.addToActiveUsers(v1);
         Database.addToActiveUsers(v2);
         Database.addToActiveUsers(o);
-        Database.addToActiveUsers(s);
+        Database.addToActiveUsers(s);     
     }
     
     public void setUsernameList()
@@ -81,7 +81,7 @@ public class Login extends javax.swing.JFrame {
                         
                     //Officers
                     case "Joshua":
-                        user = "Joshua";
+                        user = "Joshua";                       
                         new Home_Officer().setVisible(true);
                         this.dispose();
                         break;
