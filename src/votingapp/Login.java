@@ -69,6 +69,7 @@ public class Login extends javax.swing.JFrame {
                         
                     //Officers
                     case "Joshua":
+                        user = "Joshua";                       
                         user = "Joshua";
                         userId = o.getId();
                         new Home_Officer().setVisible(true);

@@ -25,6 +25,9 @@ public class Candidate {
         this.addedOn = new Date();
         this.addedBy = user;
     }
+    public int getId(){
+        return this.id;
+    }
     public String getCandidateName(){
         return this.candidateName;
     }
