@@ -5,7 +5,8 @@
  */
 package resources;
 
-import static resources.Database.addToActiveUsers;
+import static resources.Database.addToActiveSUOfficers;
+import static resources.Database.addToActiveSUVoters;
 import static resources.Database.removeFromUsers;
 import static resources.Database.updateUser;
 
@@ -20,11 +21,11 @@ public class Superuser extends User{
     }
     public void addOfficer(String un, String fn, String ln){
         User officer = new Officer(un,fn,ln, this.getUserName());
-        addToActiveUsers(officer);
+        addToActiveSUOfficers(officer);
     }
     public void addVoter(String un, String fn, String ln){
         User voter = new Voter(un,fn,ln,this.getUserName());
-        addToActiveUsers(voter);
+        addToActiveSUVoters(voter);
     }
     
     public void removeUser(User user){

@@ -5,10 +5,11 @@
  */
 package resources;
 
-import static resources.Database.addToCandidates;
+import static resources.Database.addToActiveCandidates;
 import static resources.Database.removeFromCandidates;
 import static resources.Database.getFromActiveCandidatesWhereNameIs;
 import static resources.Database.updateCandidate;
+import static resources.Database.hasNotVoted;
 
 /**
  *
@@ -19,16 +20,32 @@ public class Officer extends User{
     public Officer(String un, String fn, String ln, String addedby) {
         super(un, fn, ln, addedby);
     }
-    public void addCandidate(int id, String name, String position){
-        addToCandidates(name,position,this.getUserName());
+    
+    public boolean addCandidate(String name, String position){
+        if(hasNotVoted()){
+            addToActiveCandidates(name,position,this.getUserName());
+        }else{
+            return false;
+        }
+        return true;
     }
     
-    public void removeCandidate(String candName){
-    	Candidate cand = getFromActiveCandidatesWhereNameIs(candName);
-        removeFromCandidates(cand);
+    public boolean removeCandidate(String candName){
+        if(hasNotVoted()){
+            Candidate cand = getFromActiveCandidatesWhereNameIs(candName);
+            removeFromCandidates(cand);
+        }else{
+            return false;
+        }
+        return true;
     }
 
-    public static void updateCandidateInfo(int id, String name, String position, String officer){
-        updateCandidate(id,name,position,officer);
+    public boolean updateCandidateInfo(int id, String name, String position, String officer){
+        if(hasNotVoted()){
+            updateCandidate(id,name,position,officer);
+        }else{
+            return false;
+        }
+        return true;
     }
 }

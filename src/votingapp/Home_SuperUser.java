@@ -6,9 +6,7 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import resources.Database;
-import static resources.Database.addToActiveUsers;
 import resources.Superuser;
-import resources.User;
 import static votingapp.Login.user;
 
 public class Home_SuperUser extends javax.swing.JFrame {
@@ -24,6 +22,8 @@ public class Home_SuperUser extends javax.swing.JFrame {
         dashboard();
         initialOfficer();
         addRowToOfficerJTable();
+        initialVoter();
+        addRowToVoterJTable();
         username.setText(user);
     }
     
@@ -31,11 +31,11 @@ public class Home_SuperUser extends javax.swing.JFrame {
     {
         DefaultTableModel model = (DefaultTableModel) officersTable.getModel();
        
-        Object rowData[] = new Object[2];
+        Object rowData[] = new Object[3];
         for(int i = 0; i < SUOfficerList.size(); i++){
             rowData[0] = i;
-            rowData[1] = SUOfficerList.get(i).getFirstName() + " " +
-                SUOfficerList.get(i).getLastName();
+            rowData[1] = SUOfficerList.get(i).getFirstName();
+            rowData[2] = SUOfficerList.get(i).getLastName();
            
             model.addRow(rowData);
         }
@@ -43,21 +43,48 @@ public class Home_SuperUser extends javax.swing.JFrame {
     
     public void initialOfficer()
     {
-        Superuser s1 = new Superuser("Joshua", "Joshua", "Ty", "Hazel");
-        Superuser s2 = new Superuser("Rosslyn", "Rosslyn", "Taghoy", "Hazel");
-        Superuser s3 = new Superuser("Earvin", "Earvin", "Hao", "Hazel");
-        Superuser s4 = new Superuser("Joshua", "Joshua", "Alcoy", "Hazel");
-        Superuser s5 = new Superuser("Terrence", "Terrence", "Ting", "Hazel");
-        Superuser s6 = new Superuser("Gian", "Gian", "Young", "Hazel");
+        Superuser s1 = new Superuser("Joshua", "Joshua", "Ty", "Allena");
+        Superuser s2 = new Superuser("Rosslyn", "Rosslyn", "Taghoy", "Allena");
+        Superuser s3 = new Superuser("Earvin", "Earvin", "Hao", "Allena");
+        Superuser s4 = new Superuser("Terrence", "Terrence", "Ting", "Allena");
+        Superuser s5 = new Superuser("Gian", "Gian", "Young", "Allena");
         
         SUOfficerList.add(s1);
         SUOfficerList.add(s2);
         SUOfficerList.add(s3);
         SUOfficerList.add(s4);
         SUOfficerList.add(s5);
-        SUOfficerList.add(s6);
         
     }
+    
+    public void addRowToVoterJTable()
+    {
+        DefaultTableModel model = (DefaultTableModel) votersTable.getModel();
+       
+        Object rowData[] = new Object[3];
+        for(int i = 0; i < SUVoterList.size(); i++){
+            rowData[0] = i;
+            rowData[1] = SUVoterList.get(i).getFirstName();
+            rowData[2] = SUVoterList.get(i).getLastName();
+           
+            model.addRow(rowData);
+        }
+    }
+    
+    public void initialVoter()
+    {
+        Superuser s1 = new Superuser("Ethan", "Ethan", "Mosqueda", "Allena");
+        Superuser s2 = new Superuser("Hazel", "Hazel", "Cavite", "Allena");
+        Superuser s3 = new Superuser("Daniela", "Daniela", "Andrade", "Allena");
+        Superuser s4 = new Superuser("Maddie", "Maddie", "Burgos", "Allena");
+        
+        SUVoterList.add(s1);
+        SUVoterList.add(s2);
+        SUVoterList.add(s3);
+        SUVoterList.add(s4);
+        
+    }
+    
     public void dashboard()
     {
         //set bg color when sidebar tab clicked
@@ -133,8 +160,8 @@ public class Home_SuperUser extends javax.swing.JFrame {
 
                 model.addRow(rowData);
             }    
-        }else{
-            DefaultTableModel model = (DefaultTableModel) officersTable.getModel();
+        }else if(flag == 1){
+            DefaultTableModel model = (DefaultTableModel) votersTable.getModel();
             int rowCount = model.getRowCount();
 
             for (int i = rowCount - 1; i >= 0; i--) {
@@ -192,8 +219,8 @@ public class Home_SuperUser extends javax.swing.JFrame {
         statuslabel2 = new javax.swing.JLabel();
         fnamelabel1 = new javax.swing.JLabel();
         fname1 = new javax.swing.JTextField();
-        lname1 = new javax.swing.JTextField();
         lnamelabel1 = new javax.swing.JLabel();
+        lname1 = new javax.swing.JTextField();
         addVoter = new javax.swing.JButton();
         deleteVoter = new javax.swing.JButton();
         updateVoter = new javax.swing.JButton();
@@ -449,17 +476,19 @@ public class Home_SuperUser extends javax.swing.JFrame {
         officersLayout.setHorizontalGroup(
             officersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(officersLayout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addGroup(officersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(user_label1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 640, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(candidates_jScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 640, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(statuslabel, javax.swing.GroupLayout.PREFERRED_SIZE, 640, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(officersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(officersLayout.createSequentialGroup()
-                        .addGap(30, 30, 30)
+                        .addGap(33, 33, 33)
                         .addGroup(officersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(user_label1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 640, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(candidates_jScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 640, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(statuslabel, javax.swing.GroupLayout.PREFERRED_SIZE, 640, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(officersLayout.createSequentialGroup()
+                        .addGap(64, 64, 64)
+                        .addGroup(officersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(officersLayout.createSequentialGroup()
                                 .addComponent(fname, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))
+                                .addGap(313, 313, 313))
                             .addGroup(officersLayout.createSequentialGroup()
                                 .addComponent(fnamelabel, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -471,8 +500,7 @@ public class Home_SuperUser extends javax.swing.JFrame {
                                         .addGap(18, 18, 18)
                                         .addComponent(deleteOfficer, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
-                                        .addComponent(updateOfficer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                                .addGap(37, 37, 37)))))
+                                        .addComponent(updateOfficer, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
                 .addContainerGap(37, Short.MAX_VALUE))
         );
         officersLayout.setVerticalGroup(
@@ -484,7 +512,7 @@ public class Home_SuperUser extends javax.swing.JFrame {
                 .addComponent(candidates_jScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(statuslabel, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addGroup(officersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(officersLayout.createSequentialGroup()
                         .addComponent(fnamelabel, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -499,7 +527,7 @@ public class Home_SuperUser extends javax.swing.JFrame {
                     .addComponent(addOfficer, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(deleteOfficer, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(updateOfficer, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(62, Short.MAX_VALUE))
+                .addContainerGap(50, Short.MAX_VALUE))
         );
 
         jPanel1.add(officers);
@@ -511,7 +539,7 @@ public class Home_SuperUser extends javax.swing.JFrame {
         voters_label.setFont(new java.awt.Font("Raleway", 0, 24)); // NOI18N
         voters_label.setForeground(new java.awt.Color(255, 255, 255));
         voters_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        voters_label.setText("TABLE LIST OF OFFICERS");
+        voters_label.setText("TABLE LIST OF VOTERS");
 
         votersTable.setFont(new java.awt.Font("Raleway", 0, 12)); // NOI18N
         votersTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -522,7 +550,7 @@ public class Home_SuperUser extends javax.swing.JFrame {
                 "ID", "First Name", "Last Name"
             }
         ));
-        votersTable.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        votersTable.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         votersTable.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 votersTableMouseClicked(evt);
@@ -544,25 +572,28 @@ public class Home_SuperUser extends javax.swing.JFrame {
         fname1.setForeground(new java.awt.Color(255, 255, 255));
         fname1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         fname1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 2, true));
+        fname1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         fname1.setOpaque(false);
-
-        lname1.setBackground(new java.awt.Color(15, 74, 74));
-        lname1.setFont(new java.awt.Font("Raleway", 0, 14)); // NOI18N
-        lname1.setForeground(new java.awt.Color(255, 255, 255));
-        lname1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        lname1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 2, true));
-        lname1.setOpaque(false);
 
         lnamelabel1.setFont(new java.awt.Font("Raleway", 1, 14)); // NOI18N
         lnamelabel1.setForeground(new java.awt.Color(196, 75, 77));
         lnamelabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lnamelabel1.setText("LAST NAME");
 
+        lname1.setBackground(new java.awt.Color(15, 74, 74));
+        lname1.setFont(new java.awt.Font("Raleway", 0, 14)); // NOI18N
+        lname1.setForeground(new java.awt.Color(255, 255, 255));
+        lname1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        lname1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 2, true));
+        lname1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        lname1.setOpaque(false);
+
         addVoter.setBackground(new java.awt.Color(0, 153, 51));
         addVoter.setFont(new java.awt.Font("Raleway", 0, 14)); // NOI18N
         addVoter.setForeground(new java.awt.Color(255, 255, 255));
         addVoter.setText("ADD");
         addVoter.setBorder(null);
+        addVoter.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         addVoter.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 addVoterMouseClicked(evt);
@@ -574,6 +605,7 @@ public class Home_SuperUser extends javax.swing.JFrame {
         deleteVoter.setForeground(new java.awt.Color(255, 255, 255));
         deleteVoter.setText("DELETE");
         deleteVoter.setBorder(null);
+        deleteVoter.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         deleteVoter.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 deleteVoterMouseClicked(evt);
@@ -585,6 +617,7 @@ public class Home_SuperUser extends javax.swing.JFrame {
         updateVoter.setForeground(new java.awt.Color(255, 255, 255));
         updateVoter.setText("UPDATE");
         updateVoter.setBorder(null);
+        updateVoter.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         updateVoter.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 updateVoterMouseClicked(evt);
@@ -596,17 +629,19 @@ public class Home_SuperUser extends javax.swing.JFrame {
         votersLayout.setHorizontalGroup(
             votersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(votersLayout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addGroup(votersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(voters_label, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 640, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(voters_jScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 640, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(statuslabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 640, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(votersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(votersLayout.createSequentialGroup()
-                        .addGap(30, 30, 30)
+                        .addGap(33, 33, 33)
                         .addGroup(votersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(voters_label, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 640, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(voters_jScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 640, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(statuslabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 640, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(votersLayout.createSequentialGroup()
+                        .addGap(61, 61, 61)
+                        .addGroup(votersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(votersLayout.createSequentialGroup()
                                 .addComponent(fname1, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))
+                                .addGap(313, 313, 313))
                             .addGroup(votersLayout.createSequentialGroup()
                                 .addComponent(fnamelabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -618,8 +653,7 @@ public class Home_SuperUser extends javax.swing.JFrame {
                                         .addGap(18, 18, 18)
                                         .addComponent(deleteVoter, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
-                                        .addComponent(updateVoter, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                                .addGap(37, 37, 37)))))
+                                        .addComponent(updateVoter, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
                 .addContainerGap(37, Short.MAX_VALUE))
         );
         votersLayout.setVerticalGroup(
@@ -631,7 +665,7 @@ public class Home_SuperUser extends javax.swing.JFrame {
                 .addComponent(voters_jScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(statuslabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(29, 29, 29)
                 .addGroup(votersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(votersLayout.createSequentialGroup()
                         .addComponent(fnamelabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -646,7 +680,7 @@ public class Home_SuperUser extends javax.swing.JFrame {
                     .addComponent(addVoter, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(deleteVoter, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(updateVoter, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(52, Short.MAX_VALUE))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
 
         jPanel1.add(voters);
@@ -719,9 +753,11 @@ public class Home_SuperUser extends javax.swing.JFrame {
         DefaultTableModel model = (DefaultTableModel) officersTable.getModel();
         int selectedRowIndex = officersTable.getSelectedRow();
 
-        String officer_name = model.getValueAt(selectedRowIndex, 1).toString();
+        String officer_fname = model.getValueAt(selectedRowIndex, 1).toString();
+        String officer_lname = model.getValueAt(selectedRowIndex, 2).toString();
 
-        fname.setText(officer_name);
+        fname.setText(officer_fname);
+        lname.setText(officer_lname);
     }//GEN-LAST:event_officersTableMouseClicked
 
     private void addOfficerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addOfficerMouseClicked
@@ -730,10 +766,9 @@ public class Home_SuperUser extends javax.swing.JFrame {
             String officer_fname = fname.getText();
             String officer_lname = lname.getText();
             
-            User u = new User(officer_fname, officer_fname, officer_lname, "Hazel");
-            Database.addToActiveUsers(u);
-            SUOfficerList.addAll(Database.getCandidateList());
-            
+            Superuser newSU = new Superuser(officer_fname, officer_fname, officer_lname, "Allena");
+            Database.addToActiveSUOfficers(newSU);
+            SUOfficerList.addAll(Database.getFromActiveSUOfficers());
             sidebar = 0;
             clearAddTable(sidebar);
             
@@ -749,7 +784,7 @@ public class Home_SuperUser extends javax.swing.JFrame {
 
         int dialogButton = JOptionPane.YES_NO_OPTION;
         int dialogResult = JOptionPane.showConfirmDialog (null,
-            "Are you sure you want to remove candidate?","Warning", dialogButton);
+            "Are you sure you want to remove officer?","Warning", dialogButton);
 
         if (dialogResult == JOptionPane.YES_OPTION) {
             DefaultTableModel model = (DefaultTableModel) officersTable.getModel();
@@ -769,11 +804,12 @@ public class Home_SuperUser extends javax.swing.JFrame {
 
         int dialogButton = JOptionPane.YES_NO_OPTION;
         int dialogResult = JOptionPane.showConfirmDialog (null,
-            "Are you sure you want to update candidate?","Warning", dialogButton);
+            "Are you sure you want to update officer?","Warning", dialogButton);
 
         if (dialogResult == JOptionPane.YES_OPTION) {
-            if(!fname.getText().isEmpty()){
+            if(!fname.getText().isEmpty() && !lname.getText().isEmpty()){
                 model.setValueAt(fname.getText(), selectedRowIndex, 1);
+                model.setValueAt(lname.getText(), selectedRowIndex, 2);
                 statuslabel.setForeground(new Color(0,153,51));
                 statuslabel.setText("SUCESSFULLY UPDATED!");
             }else{
@@ -787,19 +823,75 @@ public class Home_SuperUser extends javax.swing.JFrame {
     }//GEN-LAST:event_updateOfficerMouseClicked
 
     private void votersTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_votersTableMouseClicked
-        // TODO add your handling code here:
+        DefaultTableModel model = (DefaultTableModel) votersTable.getModel();
+        int selectedRowIndex = votersTable.getSelectedRow();
+
+        String officer_fname = model.getValueAt(selectedRowIndex, 1).toString();
+        String officer_lname = model.getValueAt(selectedRowIndex, 2).toString();
+
+        fname1.setText(officer_fname);
+        lname1.setText(officer_lname);
     }//GEN-LAST:event_votersTableMouseClicked
 
     private void addVoterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addVoterMouseClicked
-        // TODO add your handling code here:
+        if(!fname1.getText().isEmpty() && !lname1.getText().isEmpty()){
+
+            String officer_fname = fname1.getText();
+            String officer_lname = lname1.getText();
+            
+            Superuser newSU = new Superuser(officer_fname, officer_fname, officer_lname, "Allena");
+            Database.addToActiveSUVoters(newSU);
+            SUVoterList.addAll(Database.getFromActiveSUVoters());
+            sidebar = 1;
+            clearAddTable(sidebar);
+            
+            statuslabel2.setForeground(new Color(0,153,51));
+            statuslabel2.setText("SUCESSFULLY ADDED!");
+        }else{
+            statuslabel2.setForeground(new Color(196,75,77));
+            statuslabel2.setText("THERE IS AN ERROR IN YOUR INPUT!");
+        }
     }//GEN-LAST:event_addVoterMouseClicked
 
     private void deleteVoterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteVoterMouseClicked
-        // TODO add your handling code here:
+        int dialogButton = JOptionPane.YES_NO_OPTION;
+        int dialogResult = JOptionPane.showConfirmDialog (null,
+            "Are you sure you want to remove voter?","Warning", dialogButton);
+
+        if (dialogResult == JOptionPane.YES_OPTION) {
+            DefaultTableModel model = (DefaultTableModel) votersTable.getModel();
+            int SelectedRowIndex = votersTable.getSelectedRow();
+            model.removeRow(SelectedRowIndex);
+            statuslabel2.setForeground(new Color(0,153,51));
+            statuslabel2.setText("SUCESSFULLY DELETED!");
+        }else{
+            statuslabel2.setForeground(new Color(196,75,77));
+            statuslabel2.setText("YOU HAVE CANCELLED DELETION!");
+        }
     }//GEN-LAST:event_deleteVoterMouseClicked
 
     private void updateVoterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_updateVoterMouseClicked
-        // TODO add your handling code here:
+        DefaultTableModel model = (DefaultTableModel) votersTable.getModel();
+        int selectedRowIndex = votersTable.getSelectedRow();
+
+        int dialogButton = JOptionPane.YES_NO_OPTION;
+        int dialogResult = JOptionPane.showConfirmDialog (null,
+            "Are you sure you want to update voter?","Warning", dialogButton);
+
+        if (dialogResult == JOptionPane.YES_OPTION) {
+            if(!fname1.getText().isEmpty() && !lname1.getText().isEmpty()){
+                model.setValueAt(fname1.getText(), selectedRowIndex, 1);
+                model.setValueAt(lname1.getText(), selectedRowIndex, 2);
+                statuslabel2.setForeground(new Color(0,153,51));
+                statuslabel2.setText("SUCESSFULLY UPDATED!");
+            }else{
+                statuslabel2.setForeground(new Color(196,75,77));
+                statuslabel2.setText("THERE IS AN ERROR IN YOUR INPUT!");
+            }
+        }else{
+            statuslabel2.setForeground(new Color(196,75,77));
+            statuslabel2.setText("YOU HAVE CANCELLED UPDATE!");
+        }
     }//GEN-LAST:event_updateVoterMouseClicked
 
     public static void main(String args[]) {

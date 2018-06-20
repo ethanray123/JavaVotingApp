@@ -50,6 +50,12 @@ public class Database {
     private static ArrayList<Vote> votes = new ArrayList<Vote>();
     private static ArrayList<Candidate> activeCandidates = new ArrayList<Candidate>();
     private static ArrayList<Candidate> archivedCandidates = new ArrayList<Candidate>();
+    private static ArrayList<User> activeSUOfficers = new ArrayList<User>();
+    private static ArrayList<User> activeSUVoters = new ArrayList<User>();
+    
+    public static boolean hasNotVoted(){
+        return votes.isEmpty();
+    }
     
     public static boolean isInActiveUsersWhereIdIs(int id){
         int i=0;
@@ -116,13 +122,22 @@ public class Database {
         archivedUsers.add(User);
         Collections.sort(archivedUsers, new SortById());
     }
-    public static void addToCandidates(String name, String position, String user){
-        Candidate newCand = new Candidate(name,position,user);
+    
+    public static void addToActiveSUOfficers(User officer){
+        activeSUOfficers.add(officer);
+    }
+    
+    public static void addToActiveSUVoters(User voter){
+        activeSUVoters.add(voter);
+    }
+    
+    public static void addToActiveCandidates(String name, String position, String officer){
+        Candidate newCand = new Candidate(name,position,officer);
         activeCandidates.add(newCand);
     }
-    public static void addToArchivedCandidates(User User){
-        archivedUsers.add(User);
-        Collections.sort(archivedUsers, new SortById());
+    
+    public static void addToArchivedCandidates(Candidate c){
+        archivedCandidates.add(c);
     }
     
     public static void addToVotes(Vote v){
@@ -134,11 +149,15 @@ public class Database {
     }
     
     public static boolean removeFromCandidates(Candidate c){
-        return activeCandidates.remove(c);
+        boolean success = activeCandidates.remove(c);
+        Database.addToArchivedCandidates(c);
+        return success;
     }
 
     public static boolean removeFromUsers(User u){
-        return activeUsers.remove(u);
+        boolean success = activeUsers.remove(u);
+        Database.addToArchivedUsers(u);
+        return success;
     }
     
     public static boolean removeFromActiveUsersWhereIdIs(int id){
@@ -200,6 +219,14 @@ public class Database {
         }else{
             return null;
         }
+    }
+    
+    public static ArrayList getFromActiveSUOfficers(){
+        return activeSUOfficers;
+    }
+    
+    public static ArrayList getFromActiveSUVoters(){
+        return activeSUVoters;
     }
     
     public static User getFromActiveUsersWhereIdIs(int id){
@@ -274,4 +301,3 @@ public class Database {
 //    }
     
 }
-

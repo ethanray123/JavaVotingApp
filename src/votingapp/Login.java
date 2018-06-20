@@ -52,6 +52,7 @@ public class Login extends javax.swing.JFrame {
         if(usernameList.contains(inputUsername)){
             if(passwordList.contains(inputPassword) && inputUsername.equals(inputPassword)){
                 switch(inputUsername){
+                    // Voters
                     case "Ethan":
                         user = "Ethan";
                         new Home_Voter().setVisible(true);
@@ -62,11 +63,45 @@ public class Login extends javax.swing.JFrame {
                         new Home_Voter().setVisible(true);
                         this.dispose();
                         break;
+                    case "Daniela":
+                        user = "Daniela";
+                        new Home_Voter().setVisible(true);
+                        this.dispose();
+                        break;
+                    case "Maddie":
+                        user = "Maddie";
+                        new Home_Voter().setVisible(true);
+                        this.dispose();
+                        break;
+                        
+                    //Officers
                     case "Joshua":
                         user = "Joshua";
                         new Home_Officer().setVisible(true);
                         this.dispose();
                         break;
+                    case "Rosslyn":
+                        user = "Rosslyn";
+                        new Home_Officer().setVisible(true);
+                        this.dispose();
+                        break;
+                    case "Earvin":
+                        user = "Earvin";
+                        new Home_Officer().setVisible(true);
+                        this.dispose();
+                        break;
+                    case "Terrence":
+                        user = "Terrence";
+                        new Home_Officer().setVisible(true);
+                        this.dispose();
+                        break;
+                    case "Gian":
+                        user = "Gian";
+                        new Home_Officer().setVisible(true);
+                        this.dispose();
+                        break;
+                        
+                    // Superusers
                     case "Allena":
                         user = "Allena";
                         new Home_SuperUser().setVisible(true);
