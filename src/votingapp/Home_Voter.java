@@ -3,6 +3,7 @@ package votingapp;
 
 import java.awt.Color;
 import static votingapp.Login.user;
+import static votingapp.Login.userId;
 
 public class Home_Voter extends javax.swing.JFrame {
     
